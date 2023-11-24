@@ -61,7 +61,7 @@ public class CommonPage {
 
     public Map<String, String> readExcel (String testCaseId) {
         try {
-            String filePath = "C:\\Users\\pooja\\findmylocatorautomation\\src\\main\\resources\\FML_LocatorSheet.xlsx";
+            String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\FML_LocatorSheet.xlsx";
             String sheetName = "Sheet1";
 
             ExcelReader excelDataReader = new ExcelReader(filePath, sheetName);

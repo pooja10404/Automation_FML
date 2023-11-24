@@ -18,11 +18,11 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pooja\\findmylocatorautomation\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 
 
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("C://Users//pooja//source//repos//FindMYLocator.crx"));
+        options.addExtensions(new File(System.getProperty("user.dir") + "\\src\\main\\resources\\FindMYLocator.crx"));
         options.addArguments("--remote-allow-origin=*", "ignore-certificate-errors");
         System.out.println("Opening extension");
         driver = new ChromeDriver(options);
