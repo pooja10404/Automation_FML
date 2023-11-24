@@ -20,12 +20,27 @@ public class IrctcTest extends BaseTest {
     IRCTCPage irctcPage = new IRCTCPage();
     CommonPage commonPage = new CommonPage();
 
-    @Test
+    @Test(priority=1)
     public void irctcTest1() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_01");
         commonPage.launchUrl();
         irctcPage.clickOnFromTextBox();
+        Thread.sleep(5000);
+        irctcPage.getFromTextBoxLocators();
+        Thread.sleep(5000);
+
+        // Assersion
+        irctcPage.assertionForgetBookTicketUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+
+    }
+
+    @Test(priority=2)
+    public void irctcTest2() throws InterruptedException {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_02");
+        commonPage.launchUrl();
+        irctcPage.clickToFromTextBox();
         Thread.sleep(5000);
         irctcPage.getFromTextBoxLocators();
         Thread.sleep(5000);

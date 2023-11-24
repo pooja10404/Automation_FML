@@ -19,11 +19,19 @@ public class IRCTCPage extends SeleniumUtility{
 
     public String getFromTextBoxLocatorsXpath = "//p-autocomplete[@id='origin']//input[@aria-autocomplete='list']";
 
+    public String getFromTextBoxLocatorCss = "p-autocomplete[id='destination'] input[aria-autocomplete='list']";
+
 
     public void clickOnFromTextBox() {
 //        waitForElementVisibility(getFromTextBoxLocatorsXpath, 10);
         driver.findElement(By.xpath(getFromTextBoxLocatorsXpath)).click();
     }
+
+    public void clickToFromTextBox() {
+//        waitForElementVisibility(getFromTextBoxLocatorsXpath, 10);
+        driver.findElement(By.cssSelector(getFromTextBoxLocatorCss)).click();
+    }
+
 
     public void getFromTextBoxLocators () {
         commonPage.getUniqueLocator();
