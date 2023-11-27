@@ -23,13 +23,13 @@ public class CommonPage {
 
     public String getUniqueCssLocator() {
         String text = driver.findElement(By.cssSelector(uniqueLocatorCss)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
+        System.out.println("Css Locator: " + text);
         return text;
     }
 
     public String getUniqueXpathLocator() {
         String text = driver.findElement(By.xpath(uniqueLocatorXpath)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
+        System.out.println("Xpath locator: " + text);
 
         return text;
     }
