@@ -137,7 +137,7 @@ public class YonoBankTest extends BaseTest {
 //    @Test
 //    public void yonoBankTest9() throws InterruptedException {
 //        CommonPage commonPage = new CommonPage();
-//        Map<String, String> values = commonPage.readExcel("YONO_SBI_09");
+//        Map<String, String> values = commonPage.readExcel("YONO_SBI_09");git
 //        commonPage.launchUrl();
 //
 //        yonoBankPage.clickOnCreateMandatesForm();
