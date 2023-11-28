@@ -13,7 +13,11 @@ public class YonoBankPage extends SeleniumUtility{
     public String getInitiateOnlineImgCss="div[class*='col-md-']:nth-of-type(1) img[class='onb-img']";
     public String getSbiFooterTextCss="div[class='float-right hidden-xs'] > p";
 
-    public String getCreateMandatesFormCss="div[class='main_content_emandate']";
+    public String getCreateMandatesFormCss="input[id='captchaAnswer']";
+    public String getSbiCreateMandateTextCss="a[class='create-mandate create-emandate']";
+
+    public String getLoginButtonTextCss ="a[class='btn yn-btn btn-yono-homepage login-btn']";
+    public String getRegisterButtonTextCss="a[class*='btn']:nth-of-type(2)";
 
 
     public void clickOnSbiLogo() {
@@ -24,19 +28,33 @@ public class YonoBankPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getHeadingTextCss)).click();
     }
 
-    public void clickOnInitiateOnlineImg() {
-        driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
+
+    public void clickOnLoginButton() throws InterruptedException {
+        commonPage.rightClickOnFindMyLocator(getLoginButtonTextCss);
+    }
+
+    public void clickOnRegisterButton() throws InterruptedException {
+        commonPage.rightClickOnFindMyLocator(getRegisterButtonTextCss);
+    }
+
+    public void clickOnInitiateOnlineImg() throws InterruptedException{
+        //driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
+        commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
     public void clickOnSbiFooterText() {
         driver.findElement(By.cssSelector(getSbiFooterTextCss)).click();
     }
 
-    public void clickOnCreateMandatesForm() {
+    public void clickOnCreateMandateText() throws InterruptedException{
+        commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
+    }
+//      need to check
+    public void clickOnCreateMandatesForm() throws InterruptedException{
+       // commonPage.rightClickOnFindMyLocator(getCreateMandatesFormCss);
         driver.findElement(By.cssSelector(getCreateMandatesFormCss)).click();
     }
     public void getUniqueLocatorsForYonoBank () {
-        //commonPage.getUniqueLocator(getAboutDistrictDropdownLocatorsCss, getAboutDistrictDropdownLocatorsXpath);
         commonPage.getUniqueLocator();
     }
     public void assertionForYonoSbiUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {

@@ -7,43 +7,31 @@ import static base.BaseTest.driver;
 
 public class IndoreNicPage extends SeleniumUtility{
     CommonPage commonPage = new CommonPage();
-
-    public String getAboutDistrictDropdownLocatorsCss = "li[aria-haspopup='true']:nth-of-type(2) > a";
-
     public String getWebsitePoliciesCss = "ul[id='menu-footer-en']>li[id*='menu-item-']:nth-of-type(1)>a";
-    public String getAboutDistrictDropdownLocatorsXpath = "//ul[@id='menu-header-en']/li[@aria-haspopup='true'][1]/a";
-
-
+    public String getAboutDistrictDropdownLocatorscss = "li[aria-haspopup='true']:nth-of-type(2) > a";
     public String getElectionCommitionCss = "a[title='Election Commission Of India'] > div[class='list-text']";
-
     public String getCopyRightTextCss="div[class='copyRightsText'] > p:nth-of-type(2)";
     public String getCopyRightTextXpath="//div[@class='copyRightsText']/p[2]";
     public String getJointDirectorTextCss="tr:nth-of-type(1) > td[data-th='OFFICER']";
-
-    public String getNewConnectionTabBoxCSS="li[class='relatedContainer']:nth-of-type(7)";
-
+    public String getNewConnectionTabBoxCSS="a[title='New Tap Connection'] span[class*='icon-supply']";
     public String getMasterPlanTextCss="tr:nth-of-type(1) > td[data-th*='Title'] > span[class='bt-content']";
     public String getIndoreDistrictNameTextCss="table[class*='table']:nth-of-type(1) th[scope='col']:nth-of-type(1)";
-
     public String getStdAndPinCodeTextCss="h1";
-
     public String getPostOfficeTextCss="div[id*='post-'] > p:nth-of-type(2)";
     public String getPinCodeBoxTextCss="table[class*='table']:nth-of-type(2) th[scope='col']:nth-of-type(1)";
 
 
-
-    public void clickOnAboutDistrictDropdown() {
+    public void clickOnAboutDistrictDropdown() throws InterruptedException{
       //  waitForElementVisibility(getAboutDistrictDropdownLocatorsXpath, 10);
-        driver.findElement(By.xpath(getAboutDistrictDropdownLocatorsXpath)).click();
+        commonPage.rightClickOnFindMyLocator(getAboutDistrictDropdownLocatorscss);
     }
 
-    public void clickOnWebsitePolices() {
-        driver.findElement(By.cssSelector(getWebsitePoliciesCss)).click();
+    public void clickOnWebsitePolices() throws InterruptedException {
+        commonPage.rightClickOnFindMyLocator(getWebsitePoliciesCss);
     }
 
-    public void clickOnElectionCommition() {
-        driver.findElement(By.cssSelector(getElectionCommitionCss)).click();
-
+    public void clickOnElectionCommition()throws InterruptedException {
+        commonPage.rightClickOnFindMyLocator(getElectionCommitionCss);
     }
 
     public void clickOnCopyRightText() {
@@ -54,8 +42,8 @@ public class IndoreNicPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getJointDirectorTextCss)).click();
     }
 
-    public void clickOnNewConnectionTabBox() {
-        driver.findElement(By.cssSelector(getNewConnectionTabBoxCSS)).isDisplayed();
+    public void clickOnNewConnectionTabBox() throws InterruptedException{
+        commonPage.rightClickOnFindMyLocator(getNewConnectionTabBoxCSS);
     }
 
     public void clickOnMasterPlanText() {
@@ -81,7 +69,6 @@ public class IndoreNicPage extends SeleniumUtility{
 
 
     public void getAboutDistrictDropdownLocators () {
-        //commonPage.getUniqueLocator(getAboutDistrictDropdownLocatorsCss, getAboutDistrictDropdownLocatorsXpath);
         commonPage.getUniqueLocator();
     }
 

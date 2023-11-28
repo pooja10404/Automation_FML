@@ -2,7 +2,12 @@ package pages;
 
 import base.ExcelReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.Map;
 
 import static base.BaseTest.driver;
@@ -78,6 +83,24 @@ public class CommonPage {
         }catch (Exception e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+
+    public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
+        try {
+            WebElement element = driver.findElement(By.cssSelector(css));
+            System.out.println("Element"+element);
+            Actions action = new Actions(driver);
+            Thread.sleep(2000);
+            action.contextClick(element).perform();
+            Robot robot = new Robot();
+            Thread.sleep(2000);
+           robot.keyPress(KeyEvent.VK_F);
+            Thread.sleep(2000);
+
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
         }
     }
 }
