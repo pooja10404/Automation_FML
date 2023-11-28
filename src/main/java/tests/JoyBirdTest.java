@@ -33,19 +33,7 @@ public class JoyBirdTest extends BaseTest {
         // Assersion
         joyBirdPage.assertionForWhishList(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
-
     @Test(priority=3)
-    public void JOY_BIRD_04() throws InterruptedException {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
-        commonPage.launchUrl();
-        joyBirdPage.ByClickOnThePhotsCustomer();
-        joyBirdPage.getFromTextBoxLocators();
-        // Assersion
-        joyBirdPage.assertionForClickOnAccountText(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
-
-    @Test(priority=4)
     public void JOY_BIRD_05() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("JOY_BIRD_05");

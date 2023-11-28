@@ -6,9 +6,4 @@
             <class name="tests.JoyBirdTest"/>
         </classes>
     </test>
-<!--    <test name = "FirstTestForIndoreNic">-->
-<!--        <classes>-->
-<!--            <class name="tests.IndoreNicTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a698608-d3b3-4e79-a4d0-085112ba4f08" name="Changes" comment="Created a new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/IRCTCPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/IRCTCPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Urls/URLConstants.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/JoyBirdPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/JoyBirdPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/IrctcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/IrctcTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/JoyBirdTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/JoyBirdTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testng.xml" afterDir="false" />
@@ -48,7 +47,7 @@
       <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.JoyBirdTest.JOY_BIRD_05">
+  <component name="RunManager" selected="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,23 +63,6 @@
       <module name="FindMyLocator" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JoyBirdTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="FindMyLocator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoyBirdTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -142,13 +124,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JoyBirdTest.JOY_BIRD_06" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.JoyBirdTest" />
+      <option name="METHOD_NAME" value="JOY_BIRD_06" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_05" />
         <item itemvalue="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml" />
-        <item itemvalue="TestNG.JoyBirdTest" />
         <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_04" />
         <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_03" />
+        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_06" />
+        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_05" />
       </list>
     </recent_temporary>
   </component>
@@ -173,5 +173,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pages/CommonPage.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
