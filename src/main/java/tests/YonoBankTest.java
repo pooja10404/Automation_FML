@@ -86,7 +86,7 @@ public class YonoBankTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("YONO_SBI_06");
         commonPage.launchUrl();
 
-        yonoBankPage.clickOnInitiateOnlineImg();
+        yonoBankPage.clickOnPrivacyStatementText();
         yonoBankPage.getUniqueLocatorsForYonoBank();
 
         // Assersion

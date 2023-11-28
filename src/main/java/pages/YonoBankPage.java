@@ -19,6 +19,8 @@ public class YonoBankPage extends SeleniumUtility{
     public String getLoginButtonTextCss ="a[class='btn yn-btn btn-yono-homepage login-btn']";
     public String getRegisterButtonTextCss="a[class*='btn']:nth-of-type(2)";
 
+    public String getPrivacyStatementTextCss="li:nth-of-type(1) > a[routerlinkactive='active']";
+
 
     public void clickOnSbiLogo() {
         driver.findElement(By.cssSelector(getSbiLogoCss)).click();
@@ -40,6 +42,11 @@ public class YonoBankPage extends SeleniumUtility{
     public void clickOnInitiateOnlineImg() throws InterruptedException{
         //driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
+    }
+
+    public void clickOnPrivacyStatementText() throws InterruptedException{
+        //driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
+        commonPage.rightClickOnFindMyLocator(getPrivacyStatementTextCss);
     }
 
     public void clickOnSbiFooterText() {
