@@ -89,6 +89,7 @@ public class IndoreNicTest extends BaseTest {
 
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_06");
         commonPage.launchUrl();
+        Thread.sleep(2000);
         indoreNicPage.clickOnNewConnectionTabBox();
         indoreNicPage.getAboutDistrictDropdownLocators();
         Thread.sleep(5000);

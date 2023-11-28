@@ -41,10 +41,10 @@ public class IrctcTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_23");
         commonPage.launchUrl();
 
-        driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("Bhopal");
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2) > span[class='ng-star-inserted']")).click();
-        driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys("INDORE");
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(1)")).click();
+        driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
+        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
+        driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");
+        driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("button[class='search_btn train_Search']")).click();
 
