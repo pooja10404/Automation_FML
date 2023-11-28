@@ -3,7 +3,7 @@
 <suite name = "Suite1">
     <test name = "FirstTestForIRCTC">
         <classes>
-            <class name="tests.IrctcTest"/>
+            <class name="tests.JoyBirdTest"/>
         </classes>
     </test>
 <!--    <test name = "FirstTestForIndoreNic">-->

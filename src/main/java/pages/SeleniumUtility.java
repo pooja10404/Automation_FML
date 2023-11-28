@@ -906,7 +906,7 @@ public class SeleniumUtility {
      * @param wait in seconds
      * @return Alert object
      */
-    public Alert acceptAlert(long wait) {
+    public static Alert acceptAlert(long wait) {
         WebDriverWait waitTime = new WebDriverWait(driver, Duration.ofSeconds(wait));
         try {
             synchronized (waitTime) {
