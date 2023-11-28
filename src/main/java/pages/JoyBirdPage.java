@@ -37,9 +37,9 @@ public class JoyBirdPage extends SeleniumUtility{
     }
 
     public void ByClickOnThePhotsLivingRoom() throws InterruptedException {
-        SeleniumUtility.acceptAlert(5000);
+        ////SeleniumUtility.acceptAlert(5000);
         driver.findElement(ByClickOnThePhotsLivingRoom).click();
-        SeleniumUtility.acceptAlert(5000);
+        //SeleniumUtility.acceptAlert(5000);
     }
 
 
