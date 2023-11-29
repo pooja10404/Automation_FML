@@ -40,12 +40,10 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnInitiateOnlineImg() throws InterruptedException{
-        //driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
     public void clickOnPrivacyStatementText() throws InterruptedException{
-        //driver.findElement(By.cssSelector(getInitiateOnlineImgCss)).click();
         commonPage.rightClickOnFindMyLocator(getPrivacyStatementTextCss);
     }
 
@@ -56,9 +54,7 @@ public class YonoBankPage extends SeleniumUtility{
     public void clickOnCreateMandateText() throws InterruptedException{
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
-//      need to check
     public void clickOnCreateMandatesForm() throws InterruptedException{
-       // commonPage.rightClickOnFindMyLocator(getCreateMandatesFormCss);
         driver.findElement(By.cssSelector(getCreateMandatesFormCss)).click();
     }
     public void getUniqueLocatorsForYonoBank () {

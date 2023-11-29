@@ -22,7 +22,7 @@ public class IndoreNicPage extends SeleniumUtility{
 
 
     public void clickOnAboutDistrictDropdown() throws InterruptedException{
-      //  waitForElementVisibility(getAboutDistrictDropdownLocatorsXpath, 10);
+        driver.findElement(By.cssSelector(getAboutDistrictDropdownLocatorscss)).isDisplayed();
         commonPage.rightClickOnFindMyLocator(getAboutDistrictDropdownLocatorscss);
     }
 
