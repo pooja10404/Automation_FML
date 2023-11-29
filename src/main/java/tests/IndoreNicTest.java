@@ -68,7 +68,6 @@ public class IndoreNicTest extends BaseTest {
     public void indoreNicTest6() throws InterruptedException {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_06");
         commonPage.launchUrl();
-        Thread.sleep(2000);
         indoreNicPage.clickOnNewConnectionTabBox();
         indoreNicPage.getAboutDistrictDropdownLocators();
         indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));

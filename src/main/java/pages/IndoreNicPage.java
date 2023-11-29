@@ -11,7 +11,6 @@ public class IndoreNicPage extends SeleniumUtility{
     public String getAboutDistrictDropdownLocatorscss = "li[aria-haspopup='true']:nth-of-type(2) > a";
     public String getElectionCommitionCss = "a[title='Election Commission Of India'] > div[class='list-text']";
     public String getCopyRightTextCss="div[class='copyRightsText'] > p:nth-of-type(2)";
-    public String getCopyRightTextXpath="//div[@class='copyRightsText']/p[2]";
     public String getJointDirectorTextCss="tr:nth-of-type(1) > td[data-th='OFFICER']";
     public String getNewConnectionTabBoxCSS="a[title='New Tap Connection'] span[class*='icon-supply']";
     public String getMasterPlanTextCss="tr:nth-of-type(1) > td[data-th*='Title'] > span[class='bt-content']";

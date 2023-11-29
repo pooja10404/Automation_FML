@@ -5,9 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.Map;
 
 import static base.BaseTest.driver;
@@ -28,29 +31,21 @@ public class CommonPage {
 
     public String getUniqueCssLocator() {
         String text = driver.findElement(By.cssSelector(uniqueLocatorCss)).getAttribute("value");
-        System.out.println("Css Locator: " + text);
         return text;
     }
 
     public String getUniqueXpathLocator() {
         String text = driver.findElement(By.xpath(uniqueLocatorXpath)).getAttribute("value");
-        System.out.println("Xpath locator: " + text);
-
         return text;
     }
 
     public String getTextLocatorOfCss() {
         String text = driver.findElement(By.cssSelector(textLocatorCss)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
-
         return text;
     }
 
     public String getTextLocatorOfXpath() {
         String text = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
-
-        System.out.println("@@@@@@@@@@@@" + text);
-
         return text;
     }
 
@@ -90,14 +85,13 @@ public class CommonPage {
     public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
         try {
             WebElement element = driver.findElement(By.cssSelector(css));
-            System.out.println("Element"+element);
             Actions action = new Actions(driver);
-            Thread.sleep(2000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
             action.contextClick(element).perform();
+            Thread.sleep(2000);
             Robot robot = new Robot();
-            Thread.sleep(2000);
-           robot.keyPress(KeyEvent.VK_F);
-            Thread.sleep(2000);
+            robot.keyPress(KeyEvent.VK_F);
 
         } catch (AWTException e) {
             throw new RuntimeException(e);
