@@ -1,44 +1,40 @@
 package pages;
 import org.openqa.selenium.By;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 import static base.BaseTest.driver;
-
 public class JoyBirdPage extends SeleniumUtility{
-    CommonPage commonPage = new CommonPage();
-    public By ClickOnTheSearchIcon=By.cssSelector("svg[title='Search']");
-    public By ClickOnTheCart=By.cssSelector("svg[class*='relative']");
-    public By ByClickOnThePhotsLivingRoom=By.cssSelector("a[data-xc='living-room'] > span[class*='items-center']");
+    public String ClickOnTheSearchIcon ="svg[title='Search']";
+    public String ClickOnTheCart="svg[class*='relative']";
+    public String ByClickOnThePhotsLivingRoom="a[data-xc='living-room'] > span[class*='items-center']";
+
+    public String ByClickOnTheShowRoom="ul[class*='flex-row']:nth-of-type(1)>li[class*='items-center']:nth-of-type(2) span";
+
+    public String  ByClickOnFreeDesignText="button[class*='group']:nth-of-type(5)";
 
     public void ClickOnTheSearchIcon() {
-        SeleniumUtility.waitForElementVisibilityWithMaxTimeOut(driver, ClickOnTheSearchIcon, 10);
-        driver.findElement(ClickOnTheSearchIcon).click();
-
+        driver.findElement(By.cssSelector(ClickOnTheSearchIcon)).click();
     }
     public void ClickOnTheCart() {
-        SeleniumUtility.waitForElementVisibilityWithMaxTimeOut(driver, ClickOnTheCart, 10);
-        driver.findElement(ClickOnTheCart).click();
+        driver.findElement(By.cssSelector(ClickOnTheCart)).click();
     }
 
-    public void ByClickOnThePhotsLivingRoom() throws InterruptedException {
-        driver.findElement(ByClickOnThePhotsLivingRoom).click();
-
+    public void ByClickOnThePhotsLivingRoom()  {
+        driver.findElement(By.cssSelector(ByClickOnThePhotsLivingRoom)).click();
     }
-    public void getFromTextBoxLocators () {
-        commonPage.getUniqueLocator();
-    }
-    public void assertionForWhishList(String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(commonPage.getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(commonPage.getUniqueXpathLocator(), uniqueLocatorXpath);
-    }
-    public void assertionForSearchIcon(String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(commonPage.getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(commonPage.getUniqueXpathLocator(), uniqueLocatorXpath);
+    public void ByClickOnTheShowRoom() {
+        driver.findElement(By.cssSelector(ByClickOnTheShowRoom)).click();
     }
 
-    public void assertionByClickOnThePhotsLivingRoom(String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(commonPage.getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(commonPage.getUniqueXpathLocator(), uniqueLocatorXpath);
+    public void ByClickOnFreeDesignText() {
+        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(ByClickOnFreeDesignText)));
+        driver.findElement(By.cssSelector(ByClickOnFreeDesignText)).click();
     }
+
+
 }
+
 

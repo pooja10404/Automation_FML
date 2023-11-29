@@ -2,6 +2,7 @@ package pages;
 
 import base.ExcelReader;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import java.util.Map;
 
@@ -47,6 +48,10 @@ public class CommonPage {
         System.out.println("@@@@@@@@@@@@" + text);
 
         return text;
+    }
+    public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
+        Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+        Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
     }
 
     public void getUniqueLocator () {

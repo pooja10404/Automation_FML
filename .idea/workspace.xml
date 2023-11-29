@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a698608-d3b3-4e79-a4d0-085112ba4f08" name="Changes" comment="Created a new">
+    <list default="true" id="2a698608-d3b3-4e79-a4d0-085112ba4f08" name="Changes" comment="TestCases For JoyBird">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Urls/URLConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/JoyBirdPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/JoyBirdPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/JoyBirdTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/JoyBirdTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
       <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml">
+  <component name="RunManager" selected="TestNG.JoyBirdTest.JOY_BIRD_03">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,6 +61,23 @@
       <module name="FindMyLocator" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JoyBirdTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.JoyBirdTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -105,25 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoyBirdTest.JOY_BIRD_05" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="FindMyLocator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/testng.xml" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoyBirdTest" />
-      <option name="METHOD_NAME" value="JOY_BIRD_05" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JoyBirdTest.JOY_BIRD_06" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="FindMyLocator" />
       <extension name="coverage">
@@ -144,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml" />
-        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_04" />
         <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_03" />
+        <item itemvalue="TestNG.JoyBirdTest" />
         <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_06" />
-        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_05" />
+        <item itemvalue="TestNG.JoyBirdTest.JOY_BIRD_04" />
+        <item itemvalue="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +157,21 @@
       <option name="presentableId" value="Default" />
       <updated>1700476183677</updated>
     </task>
+    <task id="LOCAL-00001" summary="TestCases For JoyBird">
+      <created>1701179292907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701179292907</updated>
+    </task>
+    <task id="LOCAL-00002" summary="TestCases For JoyBird">
+      <created>1701179329899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701179329899</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,12 +185,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TestCases For JoyBird" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestCases For JoyBird" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pages/CommonPage.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
