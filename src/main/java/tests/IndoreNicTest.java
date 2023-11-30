@@ -16,8 +16,7 @@ public class IndoreNicTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_01");
         commonPage.launchUrl();
         indoreNicPage.clickOnAboutDistrictDropdown();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
@@ -27,8 +26,7 @@ public class IndoreNicTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_02");
         commonPage.launchUrl();
         indoreNicPage.clickOnWebsitePolices();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
@@ -38,28 +36,25 @@ public class IndoreNicTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_03");
         commonPage.launchUrl();
         indoreNicPage.clickOnElectionCommition();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest4() throws InterruptedException {
+    public void indoreNicTest4()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_04");
         commonPage.launchUrl();
         indoreNicPage.clickOnCopyRightText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest5() throws InterruptedException {
+    public void indoreNicTest5()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_05");
         commonPage.launchUrl();
         indoreNicPage.clickOnJointDirectorText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
@@ -69,58 +64,52 @@ public class IndoreNicTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_06");
         commonPage.launchUrl();
         indoreNicPage.clickOnNewConnectionTabBox();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest7() throws InterruptedException {
+    public void indoreNicTest7()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_07");
         commonPage.launchUrl();
         indoreNicPage.clickOnMasterPlanText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest8() throws InterruptedException {
+    public void indoreNicTest8()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_08");
         commonPage.launchUrl();
         indoreNicPage.clickOnIndoreDistrictNameText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest9() throws InterruptedException {
+    public void indoreNicTest9()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_09");
         commonPage.launchUrl();
         indoreNicPage.clickStdAndPinCodeText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest10() throws InterruptedException {
+    public void indoreNicTest10()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_10");
         commonPage.launchUrl();
         indoreNicPage.clickPostOfficeText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void indoreNicTest11() throws InterruptedException {
+    public void indoreNicTest11()  {
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_11");
         commonPage.launchUrl();
         indoreNicPage.clickPinCodeBoxText();
-        indoreNicPage.getAboutDistrictDropdownLocators();
-        indoreNicPage.assertionForAboutDistrictDropdownUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 

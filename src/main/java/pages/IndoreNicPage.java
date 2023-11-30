@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import static base.BaseTest.driver;
 
@@ -65,14 +64,4 @@ public class IndoreNicPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getPinCodeBoxTextCss)).click();
     }
 
-
-
-    public void getAboutDistrictDropdownLocators () {
-        commonPage.getUniqueLocator();
-    }
-
-    public void assertionForAboutDistrictDropdownUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(commonPage.getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(commonPage.getUniqueXpathLocator(), uniqueLocatorXpath);
-    }
 }
