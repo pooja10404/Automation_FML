@@ -135,4 +135,20 @@ public class CommonPage {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
+
+    public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
+        Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+        Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+    }
+
+    public void irctcLoginDetails () {
+        driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")));
+        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
+        driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']")));
+        driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
+        driver.findElement(By.cssSelector("button[class='search_btn train_Search']")).click();
+    }
 }
