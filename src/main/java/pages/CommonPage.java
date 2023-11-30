@@ -100,7 +100,7 @@ public class CommonPage {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
             action.contextClick(element).perform();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_F);
 
@@ -110,7 +110,7 @@ public class CommonPage {
     }
 
     public String getWithoutIndexLocatorOfCss() {
-        String text = driver.findElement(By.xpath(withoutIndexLocatorCss)).getAttribute("value");
+        String text = driver.findElement(By.cssSelector(withoutIndexLocatorCss)).getAttribute("value");
         return text;
     }
     public String getWithoutIndexLocatorOfXpath() {
@@ -122,7 +122,7 @@ public class CommonPage {
         return text;
     }
     public String getIframeLocatorOfCss() {
-        String text = driver.findElement(By.xpath(iframeLocatorXpath)).getAttribute("value");
+        String text = driver.findElement(By.cssSelector(iframeLocatorCss)).getAttribute("value");
         return text;
     }
 
@@ -131,6 +131,10 @@ public class CommonPage {
         Assert.assertEquals(getWithoutIndexLocatorOfXpath(), WithoutIndexLocatorXpath);
     }
 
+    public void assertionForTextLocator (String getTextLocatorOfCss, String getTextLocatorOfXpath) {
+        Assert.assertEquals(getTextLocatorOfCss(), getTextLocatorOfCss);
+        Assert.assertEquals(getTextLocatorOfXpath(), getTextLocatorOfXpath);
+    }
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
@@ -143,7 +147,7 @@ public class CommonPage {
 
     public void irctcLoginDetails () {
         driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")));
         driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
         driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");

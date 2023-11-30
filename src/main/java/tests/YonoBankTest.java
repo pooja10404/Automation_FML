@@ -1,8 +1,11 @@
 package tests;
 import base.BaseTest;
+import org.apache.tools.ant.taskdefs.WaitFor;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.YonoBankPage;
+
+import java.time.Duration;
 import java.util.Map;
 
 public class YonoBankTest extends BaseTest {
@@ -24,6 +27,8 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnHeadingText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
 
     }
 
@@ -33,6 +38,8 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnLoginButton();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
 
     }
 
@@ -43,6 +50,9 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnRegisterButton();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
 
     }
 
@@ -52,6 +62,7 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnInitiateOnlineImg();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
 
     }
 
@@ -61,6 +72,8 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnPrivacyStatementText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -70,6 +83,7 @@ public class YonoBankTest extends BaseTest {
         commonPage.launchUrl();
         yonoBankPage.clickOnSbiFooterText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -77,6 +91,7 @@ public class YonoBankTest extends BaseTest {
     public void yonoBankTest8() throws InterruptedException {
         Map<String, String> values = commonPage.readExcel("YONO_SBI_08");
         commonPage.launchUrl();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(12));
         yonoBankPage.clickOnCreateMandateText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 

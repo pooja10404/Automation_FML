@@ -29,6 +29,7 @@ public class IrctcTest extends BaseTest {
         commonPage.irctcLoginDetails();
         irctcPage.clickOnBhopalText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
 
     }
 }
