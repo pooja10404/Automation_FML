@@ -31,7 +31,16 @@ public class JoyBirdTest extends BaseTest {
 
     }
     @Test(priority=3)
-    public void JOY_BIRD_05()  {
+    public void JOY_BIRD_04() throws InterruptedException {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
+        commonPage.launchUrl();
+        joyBirdPage.ByClickOnTheShowRoom();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+    @Test(priority=4)
+    public void JOY_BIRD_05() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("JOY_BIRD_05");
         commonPage.launchUrl();
@@ -39,16 +48,6 @@ public class JoyBirdTest extends BaseTest {
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
-    }
-
-    @Test(priority=4)
-    public void JOY_BIRD_04() {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
-        commonPage.launchUrl();
-        joyBirdPage.ByClickOnTheShowRoom();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
 
     @Test(priority=5)

@@ -5,7 +5,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static base.BaseTest.driver;
+
+
 public class JoyBirdPage extends SeleniumUtility{
+    CommonPage commonpage=new CommonPage();
     public String ClickOnTheSearchIcon ="svg[title='Search']";
     public String ClickOnTheCart="svg[class*='relative']";
     public String ByClickOnThePhotsLivingRoom="a[data-xc='living-room'] > span[class*='items-center']";
@@ -21,11 +24,12 @@ public class JoyBirdPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(ClickOnTheCart)).click();
     }
 
-    public void ByClickOnThePhotsLivingRoom()  {
-        driver.findElement(By.cssSelector(ByClickOnThePhotsLivingRoom)).click();
+    public void ByClickOnThePhotsLivingRoom() throws InterruptedException {
+        commonpage.rightClickOnFindMyLocator(ByClickOnThePhotsLivingRoom);
     }
-    public void ByClickOnTheShowRoom() {
-        driver.findElement(By.cssSelector(ByClickOnTheShowRoom)).click();
+    public void ByClickOnTheShowRoom() throws InterruptedException {
+        commonpage.rightClickOnFindMyLocator(ByClickOnTheShowRoom);
+
     }
 
     public void ByClickOnFreeDesignText() {
