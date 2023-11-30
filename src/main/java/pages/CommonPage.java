@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -47,6 +48,10 @@ public class CommonPage {
     public String getTextLocatorOfXpath() {
         String text = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
         return text;
+    }
+    public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
+        Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+        Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
     }
 
     public void getUniqueLocator () {
