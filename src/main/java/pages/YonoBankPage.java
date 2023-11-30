@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import static base.BaseTest.driver;
 
@@ -54,14 +53,9 @@ public class YonoBankPage extends SeleniumUtility{
     public void clickOnCreateMandateText() throws InterruptedException{
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
-    public void clickOnCreateMandatesForm() throws InterruptedException{
+    public void clickOnCreateMandatesForm(){
         driver.findElement(By.cssSelector(getCreateMandatesFormCss)).click();
     }
-    public void getUniqueLocatorsForYonoBank () {
-        commonPage.getUniqueLocator();
-    }
-    public void assertionForYonoSbiUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(commonPage.getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(commonPage.getUniqueXpathLocator(), uniqueLocatorXpath);
-    }
+
+
 }
