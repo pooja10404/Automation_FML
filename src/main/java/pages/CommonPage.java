@@ -100,7 +100,7 @@ public class CommonPage {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
             action.contextClick(element).perform();
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_F);
 
