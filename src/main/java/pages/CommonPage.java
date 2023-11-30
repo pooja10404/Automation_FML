@@ -55,52 +55,19 @@ public class CommonPage {
         String text = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
         return text;
     }
-    public String getWithoutIndexLocatorOfCss() {
-        String text = driver.findElement(By.xpath(withoutIndexLocatorCss)).getAttribute("value");
-        return text;
-    }
-    public String getWithoutIndexLocatorOfXpath() {
-        String text = driver.findElement(By.xpath(withoutIndexLocatorXpath)).getAttribute("value");
-        return text;
-    }
-    public String getIframeLocatorOfXpath() {
-        String text = driver.findElement(By.xpath(iframeLocatorCss)).getAttribute("value");
-        return text;
-    }
-    public String getIframeLocatorOfCss() {
-        String text = driver.findElement(By.xpath(iframeLocatorXpath)).getAttribute("value");
-        return text;
-    }
-
-    public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
+    public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
         Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
         Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
     }
 
-    public void irctcLoginDetails () {
-        driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")));
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
-        driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']")));
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
-        driver.findElement(By.cssSelector("button[class='search_btn train_Search']")).click();
+    public void getUniqueLocator () {
+        getUniqueCssLocator();
+        getUniqueXpathLocator();
     }
 
-    public void assertionForTextLocator (String TextLocatorCSS, String TextLocatorXpath) {
-        Assert.assertEquals(getTextLocatorOfCss(), TextLocatorCSS);
-        Assert.assertEquals(getTextLocatorOfXpath(), TextLocatorXpath);
-    }
-
-    public void assertionForWithoutIndexLocator (String WithoutIndexLocatorCSS, String WithoutIndexLocatorXpath) {
-        Assert.assertEquals(getWithoutIndexLocatorOfCss(), WithoutIndexLocatorCSS);
-        Assert.assertEquals(getWithoutIndexLocatorOfXpath(), WithoutIndexLocatorXpath);
-    }
-
-    public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
-        Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
-        Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
+    public void getTextLocator () {
+        getTextLocatorOfCss();
+        getTextLocatorOfXpath();
     }
 
     public Map<String, String> readExcel (String testCaseId) {
@@ -140,5 +107,32 @@ public class CommonPage {
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getWithoutIndexLocatorOfCss() {
+        String text = driver.findElement(By.xpath(withoutIndexLocatorCss)).getAttribute("value");
+        return text;
+    }
+    public String getWithoutIndexLocatorOfXpath() {
+        String text = driver.findElement(By.xpath(withoutIndexLocatorXpath)).getAttribute("value");
+        return text;
+    }
+    public String getIframeLocatorOfXpath() {
+        String text = driver.findElement(By.xpath(iframeLocatorCss)).getAttribute("value");
+        return text;
+    }
+    public String getIframeLocatorOfCss() {
+        String text = driver.findElement(By.xpath(iframeLocatorXpath)).getAttribute("value");
+        return text;
+    }
+
+    public void assertionForWithoutIndexLocator (String WithoutIndexLocatorCSS, String WithoutIndexLocatorXpath) {
+        Assert.assertEquals(getWithoutIndexLocatorOfCss(), WithoutIndexLocatorCSS);
+        Assert.assertEquals(getWithoutIndexLocatorOfXpath(), WithoutIndexLocatorXpath);
+    }
+
+    public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
+        Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
+        Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
 }
