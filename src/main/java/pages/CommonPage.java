@@ -2,8 +2,16 @@ package pages;
 
 import base.ExcelReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.Map;
 
 import static base.BaseTest.driver;
@@ -24,29 +32,21 @@ public class CommonPage {
 
     public String getUniqueCssLocator() {
         String text = driver.findElement(By.cssSelector(uniqueLocatorCss)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
         return text;
     }
 
     public String getUniqueXpathLocator() {
         String text = driver.findElement(By.xpath(uniqueLocatorXpath)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
-
         return text;
     }
 
     public String getTextLocatorOfCss() {
         String text = driver.findElement(By.cssSelector(textLocatorCss)).getAttribute("value");
-        System.out.println("@@@@@@@@@@@@" + text);
-
         return text;
     }
 
     public String getTextLocatorOfXpath() {
         String text = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
-
-        System.out.println("@@@@@@@@@@@@" + text);
-
         return text;
     }
     public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
@@ -83,6 +83,23 @@ public class CommonPage {
         }catch (Exception e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+
+    public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
+        try {
+            WebElement element = driver.findElement(By.cssSelector(css));
+            Actions action = new Actions(driver);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
+            action.contextClick(element).perform();
+            Thread.sleep(2000);
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_F);
+
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -27,11 +27,9 @@ public class BaseTest {
         System.out.println("Opening extension");
         driver = new ChromeDriver(options);
 
-//        driver.get(url);
         getDriver().manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver = getDriver();
-//        getDriver().get(url);
     }
 
     @AfterMethod
