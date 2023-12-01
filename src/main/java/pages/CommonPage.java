@@ -60,16 +60,6 @@ public class CommonPage {
         Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
     }
 
-    public void getUniqueLocator () {
-        getUniqueCssLocator();
-        getUniqueXpathLocator();
-    }
-
-    public void getTextLocator () {
-        getTextLocatorOfCss();
-        getTextLocatorOfXpath();
-    }
-
     public Map<String, String> readExcel (String testCaseId) {
         try {
             String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\FML_LocatorSheet.xlsx";
@@ -135,6 +125,8 @@ public class CommonPage {
         Assert.assertEquals(getTextLocatorOfCss(), getTextLocatorOfCss);
         Assert.assertEquals(getTextLocatorOfXpath(), getTextLocatorOfXpath);
     }
+
+
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
@@ -147,7 +139,7 @@ public class CommonPage {
 
     public void irctcLoginDetails () {
         driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")));
         driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
         driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");

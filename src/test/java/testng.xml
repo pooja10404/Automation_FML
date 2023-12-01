@@ -11,4 +11,9 @@
             <class name="tests.IrctcTest"/>
         </classes>
     </test>
+    <test name = "AbhiVyaktiestCase">
+        <classes>
+            <class name="tests.AbhiVyaktitest"/>
+        </classes>
+    </test>
 </suite>
