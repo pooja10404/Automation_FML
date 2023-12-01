@@ -131,10 +131,11 @@ public class CommonPage {
         Assert.assertEquals(getWithoutIndexLocatorOfXpath(), WithoutIndexLocatorXpath);
     }
 
-    public void assertionForTextLocator (String TextLocatorCSS, String TextLocatorXpath) {
-        Assert.assertEquals(getTextLocatorOfCss(), TextLocatorCSS);
-        Assert.assertEquals(getTextLocatorOfXpath(), TextLocatorXpath);
+    public void assertionForTextLocator (String getTextLocatorOfCss, String getTextLocatorOfXpath) {
+        Assert.assertEquals(getTextLocatorOfCss(), getTextLocatorOfCss);
+        Assert.assertEquals(getTextLocatorOfXpath(), getTextLocatorOfXpath);
     }
+
 
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);

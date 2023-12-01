@@ -17,6 +17,9 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnAboutDistrictDropdown();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
 
     }
 
@@ -27,6 +30,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnWebsitePolices();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -37,6 +42,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnElectionCommition();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
 
     }
 
@@ -46,6 +53,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnCopyRightText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+
 
     }
 
@@ -55,6 +64,7 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnJointDirectorText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
 
     }
 
@@ -74,6 +84,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnMasterPlanText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -83,6 +95,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickOnIndoreDistrictNameText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -92,6 +106,7 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickStdAndPinCodeText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -101,6 +116,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickPostOfficeText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 
@@ -110,6 +127,8 @@ public class IndoreNicTest extends BaseTest {
         commonPage.launchUrl();
         indoreNicPage.clickPinCodeBoxText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
 

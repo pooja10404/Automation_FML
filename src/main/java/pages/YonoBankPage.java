@@ -1,6 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static base.BaseTest.driver;
 
@@ -39,6 +43,8 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnInitiateOnlineImg() throws InterruptedException{
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getInitiateOnlineImgCss)));
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
@@ -51,6 +57,8 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnCreateMandateText() throws InterruptedException{
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getSbiCreateMandateTextCss)));
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
     public void clickOnCreateMandatesForm(){
