@@ -98,9 +98,10 @@ public class YonoBankTest extends BaseTest {
     }
 
     @Test
-    public void yonoBankTest9()  {
+    public void yonoBankTest9() throws InterruptedException {
         Map<String, String> values = commonPage.readExcel("YONO_SBI_09");
         commonPage.launchUrl();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         yonoBankPage.clickOnCreateMandatesForm();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
