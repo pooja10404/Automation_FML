@@ -2,7 +2,6 @@ package pages;
 
 import base.ExcelReader;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -125,16 +124,23 @@ public class CommonPage {
         Assert.assertEquals(getTextLocatorOfCss(), getTextLocatorOfCss);
         Assert.assertEquals(getTextLocatorOfXpath(), getTextLocatorOfXpath);
     }
-
-
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
 
     public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+
+        try {
+            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+        }
+
     }
 
     public void irctcLoginDetails () {
@@ -144,6 +150,13 @@ public class CommonPage {
         driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
         driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']")));
+        try {
+            driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
+        }
         driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
         driver.findElement(By.cssSelector("button[class='search_btn train_Search']")).click();
     }

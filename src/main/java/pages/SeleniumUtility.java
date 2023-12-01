@@ -921,4 +921,11 @@ public class SeleniumUtility {
         }
 
     }
+
+    public void moveToElement(String ele) throws InterruptedException {
+        WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }
 }
