@@ -60,16 +60,6 @@ public class CommonPage {
         Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
     }
 
-    public void getUniqueLocator () {
-        getUniqueCssLocator();
-        getUniqueXpathLocator();
-    }
-
-    public void getTextLocator () {
-        getTextLocatorOfCss();
-        getTextLocatorOfXpath();
-    }
-
     public Map<String, String> readExcel (String testCaseId) {
         try {
             String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\FML_LocatorSheet.xlsx";
