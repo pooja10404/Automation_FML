@@ -110,7 +110,7 @@ public class CommonPage {
     }
 
     public String getWithoutIndexLocatorOfCss() {
-        String text = driver.findElement(By.xpath(withoutIndexLocatorCss)).getAttribute("value");
+        String text = driver.findElement(By.cssSelector(withoutIndexLocatorCss)).getAttribute("value");
         return text;
     }
     public String getWithoutIndexLocatorOfXpath() {
@@ -122,13 +122,18 @@ public class CommonPage {
         return text;
     }
     public String getIframeLocatorOfCss() {
-        String text = driver.findElement(By.xpath(iframeLocatorXpath)).getAttribute("value");
+        String text = driver.findElement(By.cssSelector(iframeLocatorCss)).getAttribute("value");
         return text;
     }
 
     public void assertionForWithoutIndexLocator (String WithoutIndexLocatorCSS, String WithoutIndexLocatorXpath) {
         Assert.assertEquals(getWithoutIndexLocatorOfCss(), WithoutIndexLocatorCSS);
         Assert.assertEquals(getWithoutIndexLocatorOfXpath(), WithoutIndexLocatorXpath);
+    }
+
+    public void assertionForTextLocator (String TextLocatorCSS, String TextLocatorXpath) {
+        Assert.assertEquals(getTextLocatorOfCss(), TextLocatorCSS);
+        Assert.assertEquals(getTextLocatorOfXpath(), TextLocatorXpath);
     }
 
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {

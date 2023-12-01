@@ -2,64 +2,60 @@ package tests;
 
 import base.BaseTest;
 import org.testng.annotations.*;
+import pages.AbhiVyaktipages;
 import pages.CommonPage;
-import pages.JoyBirdPage;
+import pages.SeleniumUtility;
 
 import java.util.Map;
 
-public class JoyBirdTest extends BaseTest {
+public class AbhiVyaktitest extends BaseTest {
 
-    JoyBirdPage joyBirdPage = new JoyBirdPage();
+    AbhiVyaktipages abhiVyaktipages=new AbhiVyaktipages();
+
     @Test(priority=1)
-    public void JOY_BIRD_02() {
+    public void ABHI_VYAKTI_01() {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_02");
+        Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_01");
         commonPage.launchUrl();
-        joyBirdPage.ClickOnTheSearchIcon();
+        abhiVyaktipages.ClickOnThePauseIconOnScreen();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
     }
+
 
     @Test(priority=2)
-    public void JOY_BIRD_03()  {
+    public void ABHI_VYAKTI_02() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_03");
+        Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_02");
         commonPage.launchUrl();
-        joyBirdPage.ClickOnTheCart();
+        Thread.sleep(9000);
+        abhiVyaktipages.ClickOnTheYearOfExperience();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-
     }
     @Test(priority=3)
-    public void JOY_BIRD_04() throws InterruptedException {
+    public void ABHI_VYAKTI_03() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
+        Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_03");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnTheShowRoom();
+        abhiVyaktipages.ClickOnThePrivacyPolicyOnHomePgae();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
-
     }
+
     @Test(priority=4)
-    public void JOY_BIRD_05() throws InterruptedException {
+    public void ABHI_VYAKTI_04() {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_05");
+        Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_04");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnThePhotsLivingRoom();
+        abhiVyaktipages.ClickOnTheParagraphOnHomePage();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
-    @Test(priority=5)
-    public void JOY_BIRD_06()  {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_06");
-        commonPage.launchUrl();
-        joyBirdPage.ByClickOnFreeDesignText();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
 }
+
