@@ -4,13 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a698608-d3b3-4e79-a4d0-085112ba4f08" name="Changes" comment="these files are overriden">
+    <list default="true" id="2a698608-d3b3-4e79-a4d0-085112ba4f08" name="Changes" comment="Fml_locatorsheet update and SeleniumUtility">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/AbhiVyaktipages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/EpfoPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/JoyBirdPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/YonoBankPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/AbhiVyaktitest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/EpfoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/JoyBirdTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/YonoBankTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Urls/URLConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/ExcelDataProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CommonPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/IRCTCPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/IRCTCPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/IndoreNicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/IndoreNicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SeleniumUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/IndoreNicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/IndoreNicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/IrctcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/IrctcTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FML_LocatorSheet.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,6 +59,98 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml">
+    <configuration name="AbhiVyaktitest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AbhiVyaktitest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpfoTest.EPFO_02" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.EpfoTest" />
+      <option name="METHOD_NAME" value="EPFO_02" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpfoTest.EPFO_03" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.EpfoTest" />
+      <option name="METHOD_NAME" value="EPFO_03" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpfoTest.EPFO_04" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FindMyLocator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.EpfoTest" />
+      <option name="METHOD_NAME" value="EPFO_04" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/pooja/AUTOMATION_FINDMYLOCATOR/src/test/java/testng.xml" />
+        <item itemvalue="TestNG.EpfoTest.EPFO_04" />
+        <item itemvalue="TestNG.EpfoTest.EPFO_03" />
+        <item itemvalue="TestNG.AbhiVyaktitest" />
+        <item itemvalue="TestNG.EpfoTest.EPFO_02" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +160,14 @@
       <option name="presentableId" value="Default" />
       <updated>1700476183677</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fml_locatorsheet update and SeleniumUtility">
+      <created>1701674657934</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701674657934</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -48,5 +180,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fml_locatorsheet update and SeleniumUtility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fml_locatorsheet update and SeleniumUtility" />
   </component>
 </project>

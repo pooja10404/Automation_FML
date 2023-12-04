@@ -10,9 +10,9 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.*;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -920,5 +920,12 @@ public class SeleniumUtility {
             return null;
         }
 
+    }
+
+    public void moveToElement(String ele) throws InterruptedException {
+        WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
     }
 }
