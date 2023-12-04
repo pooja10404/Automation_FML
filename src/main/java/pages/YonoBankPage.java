@@ -43,8 +43,7 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnInitiateOnlineImg() throws InterruptedException{
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getInitiateOnlineImgCss)));
+        SeleniumUtility.waitForElementVisibility(getInitiateOnlineImgCss,20);
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
@@ -57,8 +56,7 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnCreateMandateText() throws InterruptedException{
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getSbiCreateMandateTextCss)));
+        SeleniumUtility.waitForElementVisibility(getSbiCreateMandateTextCss,20);
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
     public void clickOnCreateMandatesForm(){

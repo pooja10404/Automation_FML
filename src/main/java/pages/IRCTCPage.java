@@ -21,6 +21,9 @@ public class IRCTCPage extends SeleniumUtility{
     public String getDateTextLocatorCss= "div[class*='row'] > span > strong";
     public String getArrowTextLocatorCss= "div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(2) span[class='fa fa-angle-down ng-star-inserted']";
 
+    public String getIrctcWalletLocatorCss="div[class*='col-lg-']:nth-of-type(3) button[class='btn_Tab']:nth-of-type(1)>span[class='footer_headings']";
+    public String getIrctcOtherTextLocatorCss="div[class='border-all ng-star-inserted'] p-panel[class*='ng-tns-c'] table[class*='ng-tns-c'] span[class='t-t-O']";
+
     public void clickOnFromTextBox() {
         driver.findElement(By.xpath(getFromTextBoxLocatorsXpath)).click();
     }
@@ -33,15 +36,31 @@ public class IRCTCPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getDateTextLocatorCss)).click();
     }
 
-    public void clickOnArrowButton() throws InterruptedException {
-        driver.findElement(By.cssSelector(getArrowTextLocatorCss));
+    public void clickOnFooterLink() throws InterruptedException {
         String Element ="div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(5)";
+        SeleniumUtility.waitForElementVisibility(Element,80);
+        moveToElement(Element);
+        driver.findElement(By.cssSelector(getArrowTextLocatorCss)).click();
+    }
+
+    public void irctcWalletLink() throws InterruptedException {
+        String Element ="div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(5)";
+        SeleniumUtility.waitForElementVisibility(Element,80);
+//        moveToElement(Element);
+        commonPage.rightClickOnFindMyLocator(getIrctcWalletLocatorCss);
+    }
+
+    public void irctcOtherText() throws InterruptedException {
+        commonPage.rightClickOnFindMyLocator(getIrctcOtherTextLocatorCss);
+    }
+
+
+    public void clickOnArrowButton() throws InterruptedException {
+        String Element ="div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(5)";
+        SeleniumUtility.waitForElementVisibility(Element,50);
         moveToElement(Element);
         driver.findElement(By.cssSelector(getArrowTextLocatorCss)).click();
         commonPage.rightClickOnFindMyLocator(ArrowTextLocatorCss);
-
-
-
     }
 
 }
