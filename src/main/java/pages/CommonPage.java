@@ -93,7 +93,7 @@ public class CommonPage {
     }
 
 
-    public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
+    public  void  rightClickOnFindMyLocator(String css){
         try {
             WebElement element = driver.findElement(By.cssSelector(css));
             Actions action = new Actions(driver);
@@ -105,6 +105,8 @@ public class CommonPage {
             robot.keyPress(KeyEvent.VK_F);
 
         } catch (AWTException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

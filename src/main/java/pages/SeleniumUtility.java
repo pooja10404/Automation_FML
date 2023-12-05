@@ -304,9 +304,66 @@ public class SeleniumUtility {
      */
     public void waitForElementVisibility(String locator, long seconds) {
         LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(getByObject(locator)));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
 
+    }
+
+    /**
+     * It will waiting on staleness element.
+     *
+     * @param seconds
+     */
+    public void waitForElementStaleness(WebElement webElement,long seconds) {
+        try {
+            LOGGER.info("waiting for staleness of element [{}] for {} seconds", webElement, seconds);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            wait.until(ExpectedConditions.stalenessOf(webElement));
+        }
+        catch (Exception e){
+
+        }
+
+    }
+    public static void clickOnElementSide(WebElement element, String side) {
+        Actions actions = new Actions(driver);
+
+        // Ensure the element is clickable
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        // Get the coordinates of the element
+        int elementWidth = element.getSize().getWidth();
+        int elementHeight = element.getSize().getHeight();
+        int xOffset;
+        int yOffset;
+
+        // Calculate the coordinates based on the chosen side
+        switch (side.toLowerCase()) {
+            case "left":
+                xOffset = 1;
+                yOffset = elementHeight / 2;
+                break;
+            case "right":
+                xOffset = elementWidth - 1;
+                yOffset = elementHeight / 2;
+                break;
+            case "top":
+                xOffset = elementWidth / 2;
+                yOffset = 1;
+                break;
+            case "bottom":
+                xOffset = elementWidth / 2;
+                yOffset = elementHeight - 1;
+                break;
+            default:
+                // Default to center
+                xOffset = elementWidth / 2;
+                yOffset = elementHeight / 2;
+        }
+
+        // Perform the click operation on the specified side
+        actions.moveToElement(element, xOffset, yOffset).click().build().perform();
     }
 
     /**
