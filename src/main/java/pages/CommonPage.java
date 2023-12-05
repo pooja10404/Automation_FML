@@ -3,6 +3,7 @@ package pages;
 import base.ExcelReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -58,8 +59,13 @@ public class CommonPage extends SeleniumUtility {
         return text;
     }
     public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
-        Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
-        Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+        try {
+            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+        }catch (StaleElementReferenceException e){
+            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+        }
     }
 
     public Map<String, String> readExcel (String testCaseId) {
@@ -133,16 +139,16 @@ public class CommonPage extends SeleniumUtility {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
-    public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
-
-        try {
-            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
-            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
-        }
-        catch(org.openqa.selenium.StaleElementReferenceException ex){}
-
-
-    }
+//    public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
+//
+//        try {
+//            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
+//            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
+//        }
+//        catch(org.openqa.selenium.StaleElementReferenceException ex){}
+//
+//
+//    }
     public void irctcLoginDetails () {
         driver.findElement(By.cssSelector(originSearchLocator)).sendKeys("BHOPAL  JN - BPL ");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));

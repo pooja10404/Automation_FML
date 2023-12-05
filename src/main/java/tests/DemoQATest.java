@@ -20,7 +20,7 @@ public class DemoQATest extends BaseTest {
         commonPage.launchUrl();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         demoQAPage.clickOnTextBox();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
@@ -30,7 +30,7 @@ public class DemoQATest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Demo_QA_02");
         commonPage.launchUrl();
         demoQAPage.clickOnAlertFrameWindowText();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
@@ -40,7 +40,7 @@ public class DemoQATest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Demo_QA_03");
         commonPage.launchUrl();
         demoQAPage.clickOnDoYouLikeText();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
     @Test
@@ -48,7 +48,7 @@ public class DemoQATest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Demo_QA_04");
         commonPage.launchUrl();
         demoQAPage.clickOnMultiSelectDropdown();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
@@ -58,7 +58,7 @@ public class DemoQATest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Demo_QA_05");
         commonPage.launchUrl();
         demoQAPage.clickOnMenuItem();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }

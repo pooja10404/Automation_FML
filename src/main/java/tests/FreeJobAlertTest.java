@@ -16,7 +16,7 @@ public class FreeJobAlertTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Free_Jobs_Alert_01");
         commonPage.launchUrl();
         freeJobAlertPage.clickOnSearchBoxText();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
@@ -25,7 +25,7 @@ public class FreeJobAlertTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("Free_Jobs_Alert_02");
         commonPage.launchUrl();
         freeJobAlertPage.clickOnLatestNotificationText();
-        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
