@@ -15,13 +15,10 @@ public class YonoBankPage extends SeleniumUtility{
     public String getHeadingTextCss="div[class*='mt-md-']";
     public String getInitiateOnlineImgCss="div[class*='col-md-']:nth-of-type(1) img[class='onb-img']";
     public String getSbiFooterTextCss="div[class='float-right hidden-xs'] > p";
-
     public String getCreateMandatesFormCss="input[id='captchaAnswer']";
     public String getSbiCreateMandateTextCss="a[class='create-mandate create-emandate']";
-
     public String getLoginButtonTextCss ="a[class='btn yn-btn btn-yono-homepage login-btn']";
     public String getRegisterButtonTextCss="a[class*='btn']:nth-of-type(2)";
-
     public String getPrivacyStatementTextCss="li:nth-of-type(1) > a[routerlinkactive='active']";
 
 
@@ -43,7 +40,7 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnInitiateOnlineImg() throws InterruptedException{
-        SeleniumUtility.waitForElementVisibility(getInitiateOnlineImgCss,20);
+        waitForElementVisibility(getInitiateOnlineImgCss,20);
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
@@ -56,7 +53,7 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
     public void clickOnCreateMandateText() throws InterruptedException{
-        SeleniumUtility.waitForElementVisibility(getSbiCreateMandateTextCss,20);
+        waitForElementVisibility(getSbiCreateMandateTextCss,20);
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
     public void clickOnCreateMandatesForm(){

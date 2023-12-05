@@ -303,7 +303,7 @@ public class SeleniumUtility {
      * @param locator
      * @param seconds
      */
-    public static void waitForElementVisibility(String locator, long seconds) {
+    public void waitForElementVisibility(String locator, long seconds) {
      //   LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
@@ -526,7 +526,7 @@ public class SeleniumUtility {
      *
      * @param element
      */
-    public static void jsClick(WebElement element) {
+    public void jsClick(WebElement element) {
        // LOGGER.info("Clicking on element : {} using javascript", element);
         //highlightWebElement(element);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
