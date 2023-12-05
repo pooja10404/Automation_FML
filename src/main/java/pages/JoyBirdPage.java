@@ -33,8 +33,7 @@ public class JoyBirdPage extends SeleniumUtility{
     }
 
     public void ByClickOnFreeDesignText() {
-        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(ByClickOnFreeDesignText)));
+        waitForElementVisibility(ByClickOnFreeDesignText,20);
         driver.findElement(By.cssSelector(ByClickOnFreeDesignText)).click();
     }
 

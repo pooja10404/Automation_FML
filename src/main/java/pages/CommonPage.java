@@ -16,23 +16,25 @@ import java.util.Map;
 
 import static base.BaseTest.driver;
 
-public class CommonPage {
+public class CommonPage extends SeleniumUtility {
 
     public Map<String, String> specificTestCaseData;
-
     public String uniqueLocatorCss = "input#css-text-Unique-Locator";
     public String uniqueLocatorXpath = "//input[@id='xpath-text-Unique-Locator']";
-
     public String textLocatorCss = "input#css-text-Text-Locator";
     public String textLocatorXpath = "//input[@id='xpath-text-Text-Locator']";
     public String withoutIndexLocatorCss= "div[id='css-label-Without-Index'] ~ input[id='css-text-Without-Index']";
     public String withoutIndexLocatorXpath= "//div[@id='xpath-label-Without-Index']/following-sibling::input[@id='xpath-text-Without-Index']";
-
     public String iframeLocatorCss= "div[id='css-label-Iframe-Locator'] ~ input[id='css-text-Iframe-Locator']";
-    public String iframeLocatorXpath= "//div[@id='xpath-label-Iframe-Locator']/following-sibling::input[@id='xpath-text-Iframe-Locator']";
+    public String originSearchLocator= "p-autocomplete[id='origin'] input[aria-autocomplete='list']";
+    public String destinationSearchLocator= "p-autocomplete[id='destination'] input[aria-autocomplete='list']";
+    public String bhopalTextLocator= "//span[contains(text(),'BHOPAL  JN - BPL ')]";
+    public String indoreTextLocator= "//span[contains(text(),'INDORE JN BG - INDB')]";
+    public String searchButton="button[class='search_btn train_Search']";
+    public String loader ="div[id='loaderP']";
+
 
     public void launchUrl() {
-
         driver.get(specificTestCaseData.get("URL"));
     }
 
@@ -86,9 +88,9 @@ public class CommonPage {
     public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
         try {
             WebElement element = driver.findElement(By.cssSelector(css));
+            waitForElementVisibility(css,20);
             Actions action = new Actions(driver);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
+            waitForElementVisibility(css,30);
             action.contextClick(element).perform();
             Thread.sleep(2000);
             Robot robot = new Robot();
@@ -129,36 +131,30 @@ public class CommonPage {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
-
     public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
 
         try {
             Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
             Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
         }
-        catch(org.openqa.selenium.StaleElementReferenceException ex)
-        {
-            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
-            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
-        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex){}
+
 
     }
-
     public void irctcLoginDetails () {
-        driver.findElement(By.cssSelector("p-autocomplete[id='origin'] input[aria-autocomplete='list']")).sendKeys("BHOPAL  JN - BPL ");
+        driver.findElement(By.cssSelector(originSearchLocator)).sendKeys("BHOPAL  JN - BPL ");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")));
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']:nth-of-type(2)")).click();
-        driver.findElement(By.cssSelector("p-autocomplete[id='destination'] input[aria-autocomplete='list']")).sendKeys(" INDORE JN BG - INDB ");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class*='ng-tns-c']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bhopalTextLocator)));
+        WebElement fromClickElement= driver.findElement(By.xpath(bhopalTextLocator));
+        jsClick(fromClickElement);
+        driver.findElement(By.cssSelector(destinationSearchLocator)).sendKeys(" INDORE JN BG - INDB ");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bhopalTextLocator)));
         try {
-            driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
+            driver.findElement(By.xpath(bhopalTextLocator)).click();
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex)
-        {
-            driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
-        }
-        driver.findElement(By.cssSelector("li[class*='ng-tns-c']")).click();
-        driver.findElement(By.cssSelector("button[class='search_btn train_Search']")).click();
+        {}
+        driver.findElement(By.cssSelector(searchButton)).click();
+        waitForElementInVisibility(loader,20);
     }
 }

@@ -23,12 +23,43 @@ public class IrctcTest extends BaseTest {
 
 
     }
+
+
+    @Test
+    public void irctcTest18() throws InterruptedException {
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_18");
+        commonPage.launchUrl();
+        commonPage.irctcLoginDetails();
+        irctcPage.irctcOtherText();
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
+    }
+    @Test
+    public void irctcTest19() throws InterruptedException {
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_19");
+        commonPage.launchUrl();
+        commonPage.irctcLoginDetails();
+        irctcPage.irctcWalletLink();
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
+    }
+    @Test
+    public void irctcTest20() throws InterruptedException {
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_20");
+        commonPage.launchUrl();
+        commonPage.irctcLoginDetails();
+        irctcPage.clickOnFooterLink();
+        commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
     @Test
     public void irctcTest21() throws InterruptedException {
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_21");
         commonPage.launchUrl();
         commonPage.irctcLoginDetails();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         irctcPage.clickOnArrowButton();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
