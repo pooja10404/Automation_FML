@@ -2,7 +2,6 @@ package pages;
 
 import base.ExcelReader;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -40,23 +39,23 @@ public class CommonPage extends SeleniumUtility {
     }
 
     public String getUniqueCssLocator() {
-        String text = driver.findElement(By.cssSelector(uniqueLocatorCss)).getAttribute("value");
-        return text;
+        String UniqueCsstext = driver.findElement(By.cssSelector(uniqueLocatorCss)).getAttribute("value");
+        return UniqueCsstext;
     }
 
     public String getUniqueXpathLocator() {
-        String text = driver.findElement(By.xpath(uniqueLocatorXpath)).getAttribute("value");
-        return text;
+        String UniqueXpathtext = driver.findElement(By.xpath(uniqueLocatorXpath)).getAttribute("value");
+        return UniqueXpathtext;
     }
 
     public String getTextLocatorOfCss() {
-        String text = driver.findElement(By.cssSelector(textLocatorCss)).getAttribute("value");
-        return text;
+        String TextLocatorCsstext = driver.findElement(By.cssSelector(textLocatorCss)).getAttribute("value");
+        return TextLocatorCsstext;
     }
 
     public String getTextLocatorOfXpath() {
-        String text = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
-        return text;
+        String TextLocatorXpathtext = driver.findElement(By.xpath(textLocatorXpath)).getAttribute("value");
+        return TextLocatorXpathtext;
     }
     public void assertionForUniqueLocator(String uniqueLocatorCSS, String uniqueLocatorXpath) {
         try {
@@ -110,20 +109,20 @@ public class CommonPage extends SeleniumUtility {
     }
 
     public String getWithoutIndexLocatorOfCss() {
-        String text = driver.findElement(By.cssSelector(withoutIndexLocatorCss)).getAttribute("value");
-        return text;
+        String WithoutIndexCsstext = driver.findElement(By.cssSelector(withoutIndexLocatorCss)).getAttribute("value");
+        return WithoutIndexCsstext;
     }
     public String getWithoutIndexLocatorOfXpath() {
-        String text = driver.findElement(By.xpath(withoutIndexLocatorXpath)).getAttribute("value");
-        return text;
+        String WithoutIndexXpathtext = driver.findElement(By.xpath(withoutIndexLocatorXpath)).getAttribute("value");
+        return WithoutIndexXpathtext;
     }
     public String getIframeLocatorOfXpath() {
-        String text = driver.findElement(By.xpath(iframeLocatorCss)).getAttribute("value");
-        return text;
+        String getIframeXpathtext = driver.findElement(By.xpath(iframeLocatorCss)).getAttribute("value");
+        return getIframeXpathtext;
     }
     public String getIframeLocatorOfCss() {
-        String text = driver.findElement(By.cssSelector(iframeLocatorCss)).getAttribute("value");
-        return text;
+        String getIframeCssText = driver.findElement(By.cssSelector(iframeLocatorCss)).getAttribute("value");
+        return getIframeCssText;
     }
 
     public void assertionForWithoutIndexLocator (String WithoutIndexLocatorCSS, String WithoutIndexLocatorXpath) {
@@ -139,16 +138,6 @@ public class CommonPage extends SeleniumUtility {
         Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
         Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
     }
-//    public void assertionForUniqueLocators (String uniqueLocatorCSS, String uniqueLocatorXpath) {
-//
-//        try {
-//            Assert.assertEquals(getUniqueCssLocator(), uniqueLocatorCSS);
-//            Assert.assertEquals(getUniqueXpathLocator(), uniqueLocatorXpath);
-//        }
-//        catch(org.openqa.selenium.StaleElementReferenceException ex){}
-//
-//
-//    }
     public void irctcLoginDetails () {
         driver.findElement(By.cssSelector(originSearchLocator)).sendKeys("BHOPAL  JN - BPL ");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -161,7 +150,9 @@ public class CommonPage extends SeleniumUtility {
             driver.findElement(By.xpath(indoreTextLocator)).click();
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex)
-        {}
+        {
+            driver.findElement(By.xpath(indoreTextLocator)).click();
+        }
         driver.findElement(By.cssSelector(searchButton)).click();
         waitForElementInVisibility(loader,20);
     }
