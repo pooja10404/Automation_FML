@@ -19,16 +19,16 @@ public class IndoreNicPage extends SeleniumUtility{
     public String getPinCodeBoxTextCss="table[class*='table']:nth-of-type(2) th[scope='col']:nth-of-type(1)";
 
 
-    public void clickOnAboutDistrictDropdown() throws InterruptedException{
+    public void clickOnAboutDistrictDropdown(){
         driver.findElement(By.cssSelector(getAboutDistrictDropdownLocatorscss)).isDisplayed();
         commonPage.rightClickOnFindMyLocator(getAboutDistrictDropdownLocatorscss);
     }
 
-    public void clickOnWebsitePolices() throws InterruptedException {
+    public void clickOnWebsitePolices(){
         commonPage.rightClickOnFindMyLocator(getWebsitePoliciesCss);
     }
 
-    public void clickOnElectionCommition()throws InterruptedException {
+    public void clickOnElectionCommition(){
         commonPage.rightClickOnFindMyLocator(getElectionCommitionCss);
     }
 
@@ -40,7 +40,7 @@ public class IndoreNicPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getJointDirectorTextCss)).click();
     }
 
-    public void clickOnNewConnectionTabBox() throws InterruptedException{
+    public void clickOnNewConnectionTabBox(){
         commonPage.rightClickOnFindMyLocator(getNewConnectionTabBoxCSS);
     }
 

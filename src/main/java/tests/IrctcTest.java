@@ -26,7 +26,7 @@ public class IrctcTest extends BaseTest {
 
 
     @Test
-    public void irctcTest18() throws InterruptedException {
+    public void irctcTest18(){
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_18");
         commonPage.launchUrl();
         commonPage.irctcLoginDetails();
@@ -37,7 +37,7 @@ public class IrctcTest extends BaseTest {
 
     }
     @Test
-    public void irctcTest19() throws InterruptedException {
+    public void irctcTest19(){
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_19");
         commonPage.launchUrl();
         commonPage.irctcLoginDetails();
@@ -48,7 +48,7 @@ public class IrctcTest extends BaseTest {
 
     }
     @Test
-    public void irctcTest20() throws InterruptedException {
+    public void irctcTest20(){
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_20");
         commonPage.launchUrl();
         commonPage.irctcLoginDetails();
@@ -56,7 +56,7 @@ public class IrctcTest extends BaseTest {
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
     @Test
-    public void irctcTest21() throws InterruptedException {
+    public void irctcTest21(){
         Map<String, String> values = commonPage.readExcel("IRCTC_TC_21");
         commonPage.launchUrl();
         commonPage.irctcLoginDetails();

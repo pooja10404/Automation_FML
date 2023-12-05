@@ -33,7 +33,7 @@ public class YonoBankTest extends BaseTest {
     }
 
     @Test
-    public void yonoBankTest3() throws InterruptedException {
+    public void yonoBankTest3(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_03");
         commonPage.launchUrl();
         yonoBankPage.clickOnLoginButton();
@@ -45,7 +45,7 @@ public class YonoBankTest extends BaseTest {
 
 
     @Test
-    public void yonoBankTest4() throws InterruptedException {
+    public void yonoBankTest4(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_04");
         commonPage.launchUrl();
         yonoBankPage.clickOnRegisterButton();
@@ -57,7 +57,7 @@ public class YonoBankTest extends BaseTest {
     }
 
     @Test
-    public void yonoBankTest5() throws InterruptedException {
+    public void yonoBankTest5(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_05");
         commonPage.launchUrl();
         yonoBankPage.clickOnInitiateOnlineImg();
@@ -67,7 +67,7 @@ public class YonoBankTest extends BaseTest {
     }
 
     @Test
-    public void yonoBankTest6() throws InterruptedException {
+    public void yonoBankTest6(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_06");
         commonPage.launchUrl();
         yonoBankPage.clickOnPrivacyStatementText();
@@ -88,17 +88,17 @@ public class YonoBankTest extends BaseTest {
     }
 
     @Test
-    public void yonoBankTest8() throws InterruptedException {
+    public void yonoBankTest8(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_08");
         commonPage.launchUrl();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(12));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         yonoBankPage.clickOnCreateMandateText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
 
     }
 
     @Test
-    public void yonoBankTest9() throws InterruptedException {
+    public void yonoBankTest9(){
         Map<String, String> values = commonPage.readExcel("YONO_SBI_09");
         commonPage.launchUrl();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
