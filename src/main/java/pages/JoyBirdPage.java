@@ -24,17 +24,16 @@ public class JoyBirdPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(ClickOnTheCart)).click();
     }
 
-    public void ByClickOnThePhotsLivingRoom() throws InterruptedException {
+    public void ByClickOnThePhotsLivingRoom(){
         commonpage.rightClickOnFindMyLocator(ByClickOnThePhotsLivingRoom);
     }
-    public void ByClickOnTheShowRoom() throws InterruptedException {
+    public void ByClickOnTheShowRoom() {
         commonpage.rightClickOnFindMyLocator(ByClickOnTheShowRoom);
 
     }
 
     public void ByClickOnFreeDesignText() {
-        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(ByClickOnFreeDesignText)));
+        waitForElementVisibility(ByClickOnFreeDesignText,20);
         driver.findElement(By.cssSelector(ByClickOnFreeDesignText)).click();
     }
 

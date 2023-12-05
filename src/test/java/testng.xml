@@ -11,4 +11,14 @@
             <class name="tests.IrctcTest"/>
         </classes>
     </test>
+    <test name = "AbhiVyaktiestCase">
+        <classes>
+            <class name="tests.AbhiVyaktitest"/>
+        </classes>
+    </test>
+    <test name = "EpfotestCase">
+        <classes>
+            <class name="tests.EpfoTest"/>
+        </classes>
+    </test>
 </suite>

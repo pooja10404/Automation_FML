@@ -12,7 +12,7 @@ public class IndoreNicTest extends BaseTest {
     CommonPage commonPage = new CommonPage();
 
     @Test
-    public void indoreNicTest1() throws InterruptedException {
+    public void indoreNicTest1(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_01");
         commonPage.launchUrl();
         indoreNicPage.clickOnAboutDistrictDropdown();
@@ -25,7 +25,7 @@ public class IndoreNicTest extends BaseTest {
 
 
     @Test
-    public void indoreNicTest2() throws InterruptedException {
+    public void indoreNicTest2(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_02");
         commonPage.launchUrl();
         indoreNicPage.clickOnWebsitePolices();
@@ -37,7 +37,7 @@ public class IndoreNicTest extends BaseTest {
 
 
     @Test
-    public void indoreNicTest3() throws InterruptedException {
+    public void indoreNicTest3(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_03");
         commonPage.launchUrl();
         indoreNicPage.clickOnElectionCommition();
@@ -48,7 +48,7 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest4()  {
+    public void indoreNicTest4(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_04");
         commonPage.launchUrl();
         indoreNicPage.clickOnCopyRightText();
@@ -59,7 +59,7 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest5()  {
+    public void indoreNicTest5(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_05");
         commonPage.launchUrl();
         indoreNicPage.clickOnJointDirectorText();
@@ -70,7 +70,7 @@ public class IndoreNicTest extends BaseTest {
 
 
     @Test
-    public void indoreNicTest6() throws InterruptedException {
+    public void indoreNicTest6(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_06");
         commonPage.launchUrl();
         indoreNicPage.clickOnNewConnectionTabBox();
@@ -79,7 +79,7 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest7()  {
+    public void indoreNicTest7(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_07");
         commonPage.launchUrl();
         indoreNicPage.clickOnMasterPlanText();
@@ -90,7 +90,7 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest8()  {
+    public void indoreNicTest8(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_08");
         commonPage.launchUrl();
         indoreNicPage.clickOnIndoreDistrictNameText();
@@ -101,7 +101,7 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest9()  {
+    public void indoreNicTest9(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_09");
         commonPage.launchUrl();
         indoreNicPage.clickStdAndPinCodeText();
@@ -111,14 +111,13 @@ public class IndoreNicTest extends BaseTest {
     }
 
     @Test
-    public void indoreNicTest10()  {
+    public void indoreNicTest10(){
         Map<String, String> values = commonPage.readExcel("INDORE_NIC_10");
         commonPage.launchUrl();
         indoreNicPage.clickPostOfficeText();
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
-
     }
 
     @Test
@@ -129,7 +128,6 @@ public class IndoreNicTest extends BaseTest {
         commonPage.assertionForUniqueLocators(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
-
     }
 
 

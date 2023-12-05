@@ -22,6 +22,7 @@ import static base.BaseTest.driver;
 public class SeleniumUtility {
     private final Logger LOGGER = LoggerFactory.getLogger(SeleniumUtility.class);
 
+
     /**
      * It will refresh the current browser tab.
      */
@@ -303,10 +304,9 @@ public class SeleniumUtility {
      * @param seconds
      */
     public void waitForElementVisibility(String locator, long seconds) {
-        LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+     //   LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
-
     }
 
     /**
@@ -327,7 +327,6 @@ public class SeleniumUtility {
     }
     public static void clickOnElementSide(WebElement element, String side) {
         Actions actions = new Actions(driver);
-
         // Ensure the element is clickable
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -337,7 +336,6 @@ public class SeleniumUtility {
         int elementHeight = element.getSize().getHeight();
         int xOffset;
         int yOffset;
-
         // Calculate the coordinates based on the chosen side
         switch (side.toLowerCase()) {
             case "left":
@@ -581,7 +579,7 @@ public class SeleniumUtility {
      * @param element
      */
     public void jsClick(WebElement element) {
-        LOGGER.info("Clicking on element : {} using javascript", element);
+       // LOGGER.info("Clicking on element : {} using javascript", element);
         //highlightWebElement(element);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
@@ -978,4 +976,19 @@ public class SeleniumUtility {
         }
 
     }
+
+    public void moveToElement(String ele){
+        WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.perform();
+    }
+
+    public static void waitForElementInVisibility(String locator, long seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(locator)));
+
+    }
+
+
 }

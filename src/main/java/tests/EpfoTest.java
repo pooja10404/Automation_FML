@@ -1,64 +1,55 @@
 package tests;
-
 import base.BaseTest;
 import org.testng.annotations.*;
 import pages.CommonPage;
-import pages.JoyBirdPage;
-
+import pages.EpfoPage;
 import java.util.Map;
 
-public class JoyBirdTest extends BaseTest {
+public class EpfoTest extends BaseTest  {
+    EpfoPage epfopage=new EpfoPage();
 
-    JoyBirdPage joyBirdPage = new JoyBirdPage();
     @Test(priority=1)
-    public void JOY_BIRD_02() {
+    public void EPFO_01() {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_02");
+        Map<String, String> values = commonPage.readExcel("EPFO_01");
         commonPage.launchUrl();
-        joyBirdPage.ClickOnTheSearchIcon();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
-
-    @Test(priority=2)
-    public void JOY_BIRD_03()  {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_03");
-        commonPage.launchUrl();
-        joyBirdPage.ClickOnTheCart();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-
-    }
-    @Test(priority=3)
-    public void JOY_BIRD_04(){
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
-        commonPage.launchUrl();
-        joyBirdPage.ByClickOnTheShowRoom();
+        epfopage.ClickOnTheTextOfEase();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
-
     }
-    @Test(priority=4)
-    public void JOY_BIRD_05(){
+
+    @Test(priority=2)
+    public void EPFO_02() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_05");
+        Map<String, String> values = commonPage.readExcel("EPFO_02");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnThePhotsLivingRoom();
+        epfopage.ClickOnTheFooterHomeText();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
 
-    @Test(priority=5)
-    public void JOY_BIRD_06()  {
+    @Test(priority=3)
+    public void EPFO_03() throws InterruptedException {
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_06");
+        Map<String, String> values = commonPage.readExcel("EPFO_03");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnFreeDesignText();
+        epfopage.ClickOnTheOperatingTextOnHomePage();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+    @Test(priority=4)
+    public void EPFO_04() throws InterruptedException {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("EPFO_04");
+        commonPage.launchUrl();
+        epfopage.ClickOnTheFooterOwnedText();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
