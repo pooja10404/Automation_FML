@@ -28,19 +28,19 @@ public class IRCTCPage extends SeleniumUtility{
     public void clickOnDateText() {
         driver.findElement(By.cssSelector(getDateTextLocatorCss)).click();
     }
-    public void clickOnFooterLink() throws InterruptedException {
+    public void clickOnFooterLink(){
         waitForElementVisibility(irctcMovetoElement,80);
         moveToElement(irctcMovetoElement);
         driver.findElement(By.cssSelector(getArrowTextLocatorCss)).click();
     }
-    public void irctcWalletLink() throws InterruptedException {
+    public void irctcWalletLink(){
         waitForElementVisibility(irctcMovetoElement,80);
         commonPage.rightClickOnFindMyLocator(getIrctcWalletLocatorCss);
     }
-    public void irctcOtherText() throws InterruptedException {
+    public void irctcOtherText(){
         commonPage.rightClickOnFindMyLocator(getIrctcOtherTextLocatorCss);
     }
-    public void clickOnArrowButton() throws InterruptedException {
+    public void clickOnArrowButton(){
         waitForElementVisibility(irctcMovetoElement,50);
         moveToElement(irctcMovetoElement);
         driver.findElement(By.cssSelector(getArrowTextLocatorCss)).click();

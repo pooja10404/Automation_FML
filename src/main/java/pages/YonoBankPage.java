@@ -31,20 +31,20 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
 
-    public void clickOnLoginButton() throws InterruptedException {
+    public void clickOnLoginButton(){
         commonPage.rightClickOnFindMyLocator(getLoginButtonTextCss);
     }
 
-    public void clickOnRegisterButton() throws InterruptedException {
+    public void clickOnRegisterButton(){
         commonPage.rightClickOnFindMyLocator(getRegisterButtonTextCss);
     }
 
-    public void clickOnInitiateOnlineImg() throws InterruptedException{
+    public void clickOnInitiateOnlineImg(){
         waitForElementVisibility(getInitiateOnlineImgCss,20);
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
-    public void clickOnPrivacyStatementText() throws InterruptedException{
+    public void clickOnPrivacyStatementText(){
         commonPage.rightClickOnFindMyLocator(getPrivacyStatementTextCss);
     }
 
@@ -52,7 +52,7 @@ public class YonoBankPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getSbiFooterTextCss)).click();
     }
 
-    public void clickOnCreateMandateText() throws InterruptedException{
+    public void clickOnCreateMandateText(){
         waitForElementVisibility(getSbiCreateMandateTextCss,20);
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }

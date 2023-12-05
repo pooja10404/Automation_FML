@@ -85,18 +85,20 @@ public class CommonPage extends SeleniumUtility {
     }
 
 
-    public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
+    public  void  rightClickOnFindMyLocator(String css) {
         try {
             WebElement element = driver.findElement(By.cssSelector(css));
             waitForElementVisibility(css,20);
             Actions action = new Actions(driver);
             waitForElementVisibility(css,30);
             action.contextClick(element).perform();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_F);
 
         } catch (AWTException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -148,9 +150,9 @@ public class CommonPage extends SeleniumUtility {
         WebElement fromClickElement= driver.findElement(By.xpath(bhopalTextLocator));
         jsClick(fromClickElement);
         driver.findElement(By.cssSelector(destinationSearchLocator)).sendKeys(" INDORE JN BG - INDB ");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bhopalTextLocator)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(indoreTextLocator)));
         try {
-            driver.findElement(By.xpath(bhopalTextLocator)).click();
+            driver.findElement(By.xpath(indoreTextLocator)).click();
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex)
         {}
