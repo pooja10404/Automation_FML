@@ -31,7 +31,7 @@ public class AbhiVyaktitest extends BaseTest {
         commonPage.launchUrl();
         Thread.sleep(9000);
         abhiVyaktipages.ClickOnTheYearOfExperience();
-        // Asserstion
+        // Asserstionf
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
     @Test(priority=3)
