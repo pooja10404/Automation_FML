@@ -614,6 +614,9 @@ public class SeleniumUtility {
     public void scrollTillEndOfPage() {
         LOGGER.info("Scrolling till end of the page");
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
     }
 
     /**
