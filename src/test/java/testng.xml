@@ -21,4 +21,9 @@
             <class name="tests.EpfoTest"/>
         </classes>
     </test>
+    <test name = "jeevanPramaantestCase">
+        <classes>
+            <class name="tests.jeevanPramaanTest"/>
+        </classes>
+    </test>
 </suite>
