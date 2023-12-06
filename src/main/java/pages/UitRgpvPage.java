@@ -1,8 +1,5 @@
 package pages;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import static base.BaseTest.driver;
 
 public class UitRgpvPage extends SeleniumUtility{
@@ -10,7 +7,6 @@ public class UitRgpvPage extends SeleniumUtility{
 
     public String getArrowCss = "div[class*='col-lg-']:nth-of-type(1)>div[class='footer_col'] ul[class='list-item']>i[class='la la-angle-right']:nth-of-type(1)";
     public String closeButton= "button[class='btn btn-secondary btn-sm']";
-    public String moveTolastElement="div[class='text_center'] a:nth-of-type(1)";
 
     public void ArrowButton() {
         CloseButton();

@@ -18,7 +18,6 @@ public class UitRgpvTest extends BaseTest {
     public void uitRgpv09(){
         Map<String, String> values = commonPage.readExcel("UITRGPV_AC_09");
         commonPage.launchUrl();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         uitRgpvPage.ArrowButton();
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
