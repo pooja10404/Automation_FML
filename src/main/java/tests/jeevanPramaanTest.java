@@ -25,9 +25,12 @@ public class jeevanPramaanTest extends BaseTest {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_02");
         commonPage.launchUrl();
-        jeevanpramaanPage.ClickOnTheHomeButton();
+        jeevanpramaanPage.ClickOnThePencilButton();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
     }
     @Test(priority=3)
     public void JEEVAN_PRAMAAN_03(){
@@ -37,6 +40,9 @@ public class jeevanPramaanTest extends BaseTest {
         jeevanpramaanPage.ClickOnTheLocateCenter();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
     }
     @Test(priority=4)
     public void JEEVAN_PRAMAAN_04(){
@@ -46,6 +52,9 @@ public class jeevanPramaanTest extends BaseTest {
         jeevanpramaanPage.ClickOnTheHelpTextOnFooter();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
     }
     @Test(priority=5)
     public void JEEVAN_PRAMAAN_05(){
@@ -55,5 +64,8 @@ public class jeevanPramaanTest extends BaseTest {
         jeevanpramaanPage.ClickOnTheFooterLine();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
     }
 }

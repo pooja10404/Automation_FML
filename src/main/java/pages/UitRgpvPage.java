@@ -31,6 +31,7 @@ public class UitRgpvPage extends SeleniumUtility{
     public void playButton(){
         closeButton();
         scrollingToElementofAPage(helpSupportLink);
+        waitForElementVisibility(getplayButonCss,20);
         commonPage.rightClickOnFindMyLocator(getplayButonCss);
     }
 }
