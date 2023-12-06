@@ -589,13 +589,16 @@ public class SeleniumUtility {
      * It scrolls to the given WebElement.
      *
      * @param
-     * @param element
+     * @param ele
      * @return WebElement
      */
-    public WebElement scrollingToElementofAPage(WebElement element) {
-        LOGGER.info("Scrolling to element : {} ", element);
+    public WebElement scrollingToElementofAPage(String ele) {
+        WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
         //highlightWebElement(element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
 
         return element;
     }
@@ -985,6 +988,8 @@ public class SeleniumUtility {
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
+        sleep(5000);
+
     }
 
     public static void waitForElementInVisibility(String locator, long seconds) {
