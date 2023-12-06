@@ -85,7 +85,7 @@ public class CommonPage extends SeleniumUtility {
     }
 
 
-    public  void  rightClickOnFindMyLocator(String css)throws InterruptedException {
+    public  void  rightClickOnFindMyLocator(String css) {
         try {
             WebElement element = driver.findElement(By.cssSelector(css));
             waitForElementVisibility(css,20);
@@ -97,6 +97,8 @@ public class CommonPage extends SeleniumUtility {
             robot.keyPress(KeyEvent.VK_F);
 
         } catch (AWTException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
