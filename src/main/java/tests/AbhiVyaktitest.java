@@ -29,11 +29,11 @@ public class AbhiVyaktitest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_02");
         commonPage.launchUrl();
         abhiVyaktipages.ClickOnTheYearOfExperience();
-        // Asserstion
+        // Asserstionf
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
     @Test(priority=3)
-    public void ABHI_VYAKTI_03() throws InterruptedException {
+    public void ABHI_VYAKTI_03(){
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_03");
         commonPage.launchUrl();
@@ -41,7 +41,6 @@ public class AbhiVyaktitest extends BaseTest {
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
-        //commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
 
     @Test(priority=4)

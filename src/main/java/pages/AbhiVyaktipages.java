@@ -22,10 +22,10 @@ public class AbhiVyaktipages extends SeleniumUtility{
         driver.findElement(By.cssSelector(clickOnParagraph)).click();
     }
 
-    public void ClickOnTheYearOfExperience() throws InterruptedException {
+    public void ClickOnTheYearOfExperience(){
         commonpage.rightClickOnFindMyLocator(ClickOnTheExperence);
     }
-    public void ClickOnThePrivacyPolicyOnHomePgae() throws InterruptedException {
+    public void ClickOnThePrivacyPolicyOnHomePgae(){
         commonpage.rightClickOnFindMyLocator(clickOnPrivacyPolicy);
     }
 

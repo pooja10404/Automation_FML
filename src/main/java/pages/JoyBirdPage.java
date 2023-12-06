@@ -24,10 +24,10 @@ public class JoyBirdPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(ClickOnTheCart)).click();
     }
 
-    public void ByClickOnThePhotsLivingRoom() throws InterruptedException {
+    public void ByClickOnThePhotsLivingRoom(){
         commonpage.rightClickOnFindMyLocator(ByClickOnThePhotsLivingRoom);
     }
-    public void ByClickOnTheShowRoom() throws InterruptedException {
+    public void ByClickOnTheShowRoom() {
         commonpage.rightClickOnFindMyLocator(ByClickOnTheShowRoom);
 
     }
