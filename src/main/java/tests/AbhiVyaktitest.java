@@ -4,7 +4,6 @@ import base.BaseTest;
 import org.testng.annotations.*;
 import pages.AbhiVyaktipages;
 import pages.CommonPage;
-import pages.SeleniumUtility;
 
 import java.util.Map;
 
@@ -29,7 +28,6 @@ public class AbhiVyaktitest extends BaseTest {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("ABHI_VYAKTI_02");
         commonPage.launchUrl();
-        Thread.sleep(9000);
         abhiVyaktipages.ClickOnTheYearOfExperience();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
