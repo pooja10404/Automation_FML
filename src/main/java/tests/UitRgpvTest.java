@@ -4,9 +4,6 @@ import org.testng.annotations.Test;
 
 import pages.CommonPage;
 import pages.UitRgpvPage;
-
-
-import java.time.Duration;
 import java.util.Map;
 
 
@@ -37,6 +34,22 @@ public class UitRgpvTest extends BaseTest {
         uitRgpvPage.arrowButton();
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+    }
+
+    @Test
+    public void uitRgpv01(){
+        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_01");
+        commonPage.launchUrl();
+        uitRgpvPage.closeButtonOnscreen();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test
+    public void uitRgpv02(){
+        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_02");
+        commonPage.launchUrl();
+        uitRgpvPage.clickOnTheImageText();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
 
 }

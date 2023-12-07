@@ -10,6 +10,8 @@ public class UitRgpvPage extends SeleniumUtility{
     public String getPhotoGalleryTextCss="div[class*='col-lg-']:nth-of-type(2) ul[class='list-item']>li:nth-of-type(1)>a";
     public String getplayButonCss="a[class='overlay-link play-now ripple']";
     public String helpSupportLink="div[class*='col-md-'] > h2";
+    public String closeButtonOnHomePagePopUp= "button[class='btn-close']";
+    public String ClickOnTheTextOnImage= "div[class*='col-md-']:nth-of-type(1)>div[class='ctg_content']>div[class='box_name']:nth-of-type(1)>h4";
 
     public void arrowButton() {
         closeButton();
@@ -20,6 +22,21 @@ public class UitRgpvPage extends SeleniumUtility{
     public void closeButton(){
         waitForElementVisibility(closeButton, 20);
         driver.findElement(By.cssSelector(closeButton)).click();
+    }
+
+    public void closeButtonOnscreen()
+    {
+        waitForElementVisibility(closeButton, 20);
+        commonPage.rightClickOnFindMyLocator(closeButtonOnHomePagePopUp);
+    }
+
+    public void clickOnTheImageText()
+    {
+       // CloseButton();
+        //scrollTillEndOfPage();
+        //scrollingToElementofAPage(ClickOnTheTextOnImage);
+        waitForElementVisibility(closeButton, 50);
+        commonPage.rightClickOnFindMyLocator(ClickOnTheTextOnImage);
     }
 
     public void photoGalleryText(){
