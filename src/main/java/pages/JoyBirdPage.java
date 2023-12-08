@@ -16,7 +16,6 @@ public class JoyBirdPage extends SeleniumUtility{
     public String  ByClickOnFreeDesignText="button[class*='group']:nth-of-type(5)";
     public String getMessageIframeBoxText="div[class='sc-hJxCPi bIScfh']";
     public String clickonSustainability="div[class*='flex'] > div[class*='w-']:nth-of-type(1) > ul>li:nth-of-type(5)>a";
-    public String clickonCloseButton="div[class='sidebar-iframe-close']";
     public String messageIframe="iframe[data-qa='launcher-icon-iframe']";
 
     public void ClickOnTheSearchIcon() {
@@ -31,7 +30,6 @@ public class JoyBirdPage extends SeleniumUtility{
     }
     public void ByClickOnTheShowRoom() {
         commonpage.rightClickOnFindMyLocator(ByClickOnTheShowRoom);
-
     }
 
     public void ByClickOnFreeDesignText() {

@@ -109,6 +109,15 @@ public class CommonPage extends SeleniumUtility {
         }
     }
 
+    public  void  rightClickForIframeLocator(String css) {
+
+            WebElement element = driver.findElement(By.cssSelector(css));
+            waitForElementVisibility(css,20);
+            Actions action = new Actions(driver);
+            waitForElementVisibility(css,30);
+            action.contextClick(element).perform();
+    }
+
     public String getWithoutIndexLocatorOfCss() {
         String WithoutIndexCsstext = driver.findElement(By.cssSelector(withoutIndexLocatorCss)).getAttribute("value");
         return WithoutIndexCsstext;
