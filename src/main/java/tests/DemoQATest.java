@@ -63,6 +63,45 @@ public class DemoQATest extends BaseTest {
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
 
+    @Test
+    public void demoQA6(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_Iframe_06");
+        commonPage.launchUrl();
+        demoQAPage.clickOnSamplePage();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+    }
+
+    @Test
+    public void demoQA7(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_Iframe_07");
+        commonPage.launchUrl();
+        demoQAPage.clickOnSamplePageHeadingText();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+
+    @Test
+    public void demoQA8(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_Iframe_08");
+        commonPage.launchUrl();
+        demoQAPage.clickOnSamplePageSecondHeadingText();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+    @Test
+    public void demoQA9(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_Iframe_09");
+        commonPage.launchUrl();
+        demoQAPage.clickOnParentFramePage();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
 
 
 

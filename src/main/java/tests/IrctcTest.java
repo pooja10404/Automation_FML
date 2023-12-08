@@ -242,6 +242,14 @@ public class IrctcTest extends BaseTest {
         irctcPage.clickOnBhopalText();
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+    }
 
+    @Test
+    public void irctcTest24(){
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_Iframe_24");
+        commonPage.launchUrl();
+        irctcPage.clickOnDisha();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
     }
 }

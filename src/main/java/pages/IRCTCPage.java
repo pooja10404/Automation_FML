@@ -36,6 +36,9 @@ public class IRCTCPage extends SeleniumUtility{
     public String getIrctcWalletLocatorCss="div[class*='col-lg-']:nth-of-type(3) button[class='btn_Tab']:nth-of-type(1)>span[class='footer_headings']";
     public String getIrctcOtherTextLocatorCss="div[class='border-all ng-star-inserted'] p-panel[class*='ng-tns-c'] table[class*='ng-tns-c'] span[class='t-t-O']";
     public String irctcMovetoElement="div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(5)";
+    public String getDishaLocatorCss = "div[id='askDishaLuncher'] > img:nth-of-type(1)";
+    public String crossOriginLocator="div[id='book-form']";
+    public String dishaIframeId = "Disha-Bot";
     public void clickOnFromTextBox() {
         driver.findElement(By.xpath(getFromTextBoxLocatorsXpath)).click();
     }
@@ -111,6 +114,13 @@ public class IRCTCPage extends SeleniumUtility{
         waitForElementVisibility(irctcMovetoElement,80);
         moveToElement(irctcMovetoElement);
         driver.findElement(By.cssSelector(getArrowTextLocatorCss)).click();
+    }
+    public void clickOnDisha(){
+        driver.findElement(By.cssSelector(getDishaLocatorCss)).click();
+        WebElement iframe_element=driver.findElement(By.id(dishaIframeId));
+        driver.switchTo().frame(iframe_element);
+        driver.findElement(By.cssSelector(crossOriginLocator)).click();
+        driver.switchTo().defaultContent();
     }
     public void irctcWalletLink(){
         waitForElementVisibility(irctcMovetoElement,80);
