@@ -50,7 +50,7 @@ public class JoyBirdTest extends BaseTest {
         joyBirdPage.ByClickOnThePhotsLivingRoom();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
 
     @Test(priority=5)
