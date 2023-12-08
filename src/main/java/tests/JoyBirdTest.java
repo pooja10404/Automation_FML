@@ -62,4 +62,16 @@ public class JoyBirdTest extends BaseTest {
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
+
+    @Test(priority=6)
+    public void JOY_BIRD_07()  {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("JOY_BIRD_Iframe_07");
+        commonPage.launchUrl();
+        joyBirdPage.ClickOnMessageIframeBox();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+    }
 }

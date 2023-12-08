@@ -11,6 +11,22 @@ public class UitRgpvTest extends BaseTest {
     CommonPage commonPage = new CommonPage();
     UitRgpvPage uitRgpvPage = new UitRgpvPage();
 
+
+    @Test
+    public void uitRgpv01(){
+        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_01");
+        commonPage.launchUrl();
+        uitRgpvPage.closeButtonOnscreen();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test
+    public void uitRgpv02(){
+        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_02");
+        commonPage.launchUrl();
+        uitRgpvPage.clickOnTheImageText();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
     @Test
     public void uitRgpv03(){
         Map<String, String> values = commonPage.readExcel("UITRGPV_AC_03");
@@ -36,20 +52,6 @@ public class UitRgpvTest extends BaseTest {
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
     }
 
-    @Test
-    public void uitRgpv01(){
-        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_01");
-        commonPage.launchUrl();
-        uitRgpvPage.closeButtonOnscreen();
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
 
-    @Test
-    public void uitRgpv02(){
-        Map<String, String> values = commonPage.readExcel("UITRGPV_AC_02");
-        commonPage.launchUrl();
-        uitRgpvPage.clickOnTheImageText();
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
 
 }

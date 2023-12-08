@@ -26,6 +26,7 @@ public class CommonPage extends SeleniumUtility {
     public String withoutIndexLocatorCss= "div[id='css-label-Without-Index'] ~ input[id='css-text-Without-Index']";
     public String withoutIndexLocatorXpath= "//div[@id='xpath-label-Without-Index']/following-sibling::input[@id='xpath-text-Without-Index']";
     public String iframeLocatorCss= "div[id='css-label-Iframe-Locator'] ~ input[id='css-text-Iframe-Locator']";
+    public String iframeLocatorXpath= "//div[@id='xpath-label-Iframe-Locator']/following-sibling::input[@id='xpath-text-Iframe-Locator']";
     public String originSearchLocator= "p-autocomplete[id='origin'] input[aria-autocomplete='list']";
     public String destinationSearchLocator= "p-autocomplete[id='destination'] input[aria-autocomplete='list']";
     public String bhopalTextLocator= "//span[contains(text(),'BHOPAL  JN - BPL ')]";
@@ -117,7 +118,7 @@ public class CommonPage extends SeleniumUtility {
         return WithoutIndexXpathtext;
     }
     public String getIframeLocatorOfXpath() {
-        String getIframeXpathtext = driver.findElement(By.xpath(iframeLocatorCss)).getAttribute("value");
+        String getIframeXpathtext = driver.findElement(By.xpath(iframeLocatorXpath)).getAttribute("value");
         return getIframeXpathtext;
     }
     public String getIframeLocatorOfCss() {
@@ -135,8 +136,8 @@ public class CommonPage extends SeleniumUtility {
         Assert.assertEquals(getTextLocatorOfXpath(), getTextLocatorOfXpath);
     }
     public void assertionForIframeLocator (String IframeLocatorCSS, String IframeLocatorXpath) {
-        Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorCSS);
-        Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorXpath);
+        Assert.assertEquals(getIframeLocatorOfCss(), IframeLocatorCSS);
+        Assert.assertEquals(getIframeLocatorOfXpath(), IframeLocatorXpath);
     }
     public void irctcLoginDetails () {
         driver.findElement(By.cssSelector(originSearchLocator)).sendKeys("BHOPAL  JN - BPL ");
