@@ -15,13 +15,10 @@ public class YonoBankPage extends SeleniumUtility{
     public String getHeadingTextCss="div[class*='mt-md-']";
     public String getInitiateOnlineImgCss="div[class*='col-md-']:nth-of-type(1) img[class='onb-img']";
     public String getSbiFooterTextCss="div[class='float-right hidden-xs'] > p";
-
     public String getCreateMandatesFormCss="input[id='captchaAnswer']";
     public String getSbiCreateMandateTextCss="a[class='create-mandate create-emandate']";
-
     public String getLoginButtonTextCss ="a[class='btn yn-btn btn-yono-homepage login-btn']";
     public String getRegisterButtonTextCss="a[class*='btn']:nth-of-type(2)";
-
     public String getPrivacyStatementTextCss="li:nth-of-type(1) > a[routerlinkactive='active']";
 
 
@@ -34,21 +31,20 @@ public class YonoBankPage extends SeleniumUtility{
     }
 
 
-    public void clickOnLoginButton() throws InterruptedException {
+    public void clickOnLoginButton(){
         commonPage.rightClickOnFindMyLocator(getLoginButtonTextCss);
     }
 
-    public void clickOnRegisterButton() throws InterruptedException {
+    public void clickOnRegisterButton(){
         commonPage.rightClickOnFindMyLocator(getRegisterButtonTextCss);
     }
 
-    public void clickOnInitiateOnlineImg() throws InterruptedException{
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getInitiateOnlineImgCss)));
+    public void clickOnInitiateOnlineImg(){
+        waitForElementVisibility(getInitiateOnlineImgCss,20);
         commonPage.rightClickOnFindMyLocator(getInitiateOnlineImgCss);
     }
 
-    public void clickOnPrivacyStatementText() throws InterruptedException{
+    public void clickOnPrivacyStatementText(){
         commonPage.rightClickOnFindMyLocator(getPrivacyStatementTextCss);
     }
 
@@ -56,9 +52,8 @@ public class YonoBankPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getSbiFooterTextCss)).click();
     }
 
-    public void clickOnCreateMandateText() throws InterruptedException{
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(getSbiCreateMandateTextCss)));
+    public void clickOnCreateMandateText(){
+        waitForElementVisibility(getSbiCreateMandateTextCss,20);
         commonPage.rightClickOnFindMyLocator(getSbiCreateMandateTextCss);
     }
     public void clickOnCreateMandatesForm(){

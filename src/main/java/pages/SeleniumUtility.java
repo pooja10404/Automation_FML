@@ -22,6 +22,7 @@ import static base.BaseTest.driver;
 public class SeleniumUtility {
     private final Logger LOGGER = LoggerFactory.getLogger(SeleniumUtility.class);
 
+
     /**
      * It will refresh the current browser tab.
      */
@@ -303,10 +304,64 @@ public class SeleniumUtility {
      * @param seconds
      */
     public void waitForElementVisibility(String locator, long seconds) {
-        LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
+     //   LOGGER.info("waiting for visibility of element [{}] for {} seconds", locator, seconds);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(getByObject(locator)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
+    }
 
+    /**
+     * It will waiting on staleness element.
+     *
+     * @param seconds
+     */
+    public void waitForElementStaleness(WebElement webElement,long seconds) {
+        try {
+            LOGGER.info("waiting for staleness of element [{}] for {} seconds", webElement, seconds);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            wait.until(ExpectedConditions.stalenessOf(webElement));
+        }
+        catch (Exception e){
+
+        }
+
+    }
+    public static void clickOnElementSide(WebElement element, String side) {
+        Actions actions = new Actions(driver);
+        // Ensure the element is clickable
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        // Get the coordinates of the element
+        int elementWidth = element.getSize().getWidth();
+        int elementHeight = element.getSize().getHeight();
+        int xOffset;
+        int yOffset;
+        // Calculate the coordinates based on the chosen side
+        switch (side.toLowerCase()) {
+            case "left":
+                xOffset = 1;
+                yOffset = elementHeight / 2;
+                break;
+            case "right":
+                xOffset = elementWidth - 1;
+                yOffset = elementHeight / 2;
+                break;
+            case "top":
+                xOffset = elementWidth / 2;
+                yOffset = 1;
+                break;
+            case "bottom":
+                xOffset = elementWidth / 2;
+                yOffset = elementHeight - 1;
+                break;
+            default:
+                // Default to center
+                xOffset = elementWidth / 2;
+                yOffset = elementHeight / 2;
+        }
+
+        // Perform the click operation on the specified side
+        actions.moveToElement(element, xOffset, yOffset).click().build().perform();
     }
 
     /**
@@ -524,7 +579,7 @@ public class SeleniumUtility {
      * @param element
      */
     public void jsClick(WebElement element) {
-        LOGGER.info("Clicking on element : {} using javascript", element);
+       // LOGGER.info("Clicking on element : {} using javascript", element);
         //highlightWebElement(element);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
@@ -534,13 +589,16 @@ public class SeleniumUtility {
      * It scrolls to the given WebElement.
      *
      * @param
-     * @param element
+     * @param ele
      * @return WebElement
      */
-    public WebElement scrollingToElementofAPage(WebElement element) {
-        LOGGER.info("Scrolling to element : {} ", element);
+    public WebElement scrollingToElementofAPage(String ele) {
+        WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
         //highlightWebElement(element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
 
         return element;
     }
@@ -559,6 +617,9 @@ public class SeleniumUtility {
     public void scrollTillEndOfPage() {
         LOGGER.info("Scrolling till end of the page");
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
     }
 
     /**
@@ -922,10 +983,20 @@ public class SeleniumUtility {
 
     }
 
-    public void moveToElement(String ele) throws InterruptedException {
+    public void moveToElement(String ele) {
         WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
+        sleep(5000);
+
     }
+
+    public static void waitForElementInVisibility(String locator, long seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(locator)));
+
+    }
+
+
 }

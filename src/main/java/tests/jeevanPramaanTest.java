@@ -1,41 +1,43 @@
 package tests;
-
 import base.BaseTest;
 import org.testng.annotations.*;
 import pages.CommonPage;
-import pages.JoyBirdPage;
+import pages.jeevanPramaanPage;
 
+import java.time.Duration;
 import java.util.Map;
 
-public class JoyBirdTest extends BaseTest {
 
-    JoyBirdPage joyBirdPage = new JoyBirdPage();
+public class jeevanPramaanTest extends BaseTest {
+    jeevanPramaanPage jeevanpramaanPage=new jeevanPramaanPage();
+
     @Test(priority=1)
-    public void JOY_BIRD_02() {
+    public void JEEVAN_PRAMAAN_01(){
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_02");
+        Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_01");
         commonPage.launchUrl();
-        joyBirdPage.ClickOnTheSearchIcon();
+        jeevanpramaanPage.ClickOnTheJeevanPravanLogo();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
-
     @Test(priority=2)
-    public void JOY_BIRD_03()  {
+    public void JEEVAN_PRAMAAN_02(){
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_03");
+        Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_02");
         commonPage.launchUrl();
-        joyBirdPage.ClickOnTheCart();
+        jeevanpramaanPage.ClickOnThePencilButton();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
 
     }
     @Test(priority=3)
-    public void JOY_BIRD_04(){
+    public void JEEVAN_PRAMAAN_03(){
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_04");
+        Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_03");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnTheShowRoom();
+        jeevanpramaanPage.ClickOnTheLocateCenter();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
@@ -43,35 +45,27 @@ public class JoyBirdTest extends BaseTest {
 
     }
     @Test(priority=4)
-    public void JOY_BIRD_05(){
+    public void JEEVAN_PRAMAAN_04(){
         CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_05");
+        Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_04");
         commonPage.launchUrl();
-        joyBirdPage.ByClickOnThePhotsLivingRoom();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
-    }
-
-    @Test(priority=5)
-    public void JOY_BIRD_06()  {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_06");
-        commonPage.launchUrl();
-        joyBirdPage.ByClickOnFreeDesignText();
-        // Asserstion
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-    }
-
-    @Test(priority=6)
-    public void JOY_BIRD_07()  {
-        CommonPage commonPage = new CommonPage();
-        Map<String, String> values = commonPage.readExcel("JOY_BIRD_Iframe_07");
-        commonPage.launchUrl();
-        joyBirdPage.ClickOnMessageIframeBox();
+        jeevanpramaanPage.ClickOnTheHelpTextOnFooter();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
-        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
+    }
+    @Test(priority=5)
+    public void JEEVAN_PRAMAAN_05(){
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("JEEVAN_PRAMAAN_05");
+        commonPage.launchUrl();
+        jeevanpramaanPage.ClickOnTheFooterLine();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+
     }
 }
