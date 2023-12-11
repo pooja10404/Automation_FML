@@ -51,7 +51,4 @@ public class UitRgpvTest extends BaseTest {
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
     }
-
-
-
 }
