@@ -52,8 +52,14 @@ public class JoyBirdPage extends SeleniumUtility{
         commonpage.rightClickOnFindMyLocator(getMessageIframeBoxText);
         driver.switchTo().defaultContent();
 
-
     }
+
+    public void ClickOnLogPageView() {
+        scrollTillEndOfPage();
+        driver.findElement(By.cssSelector(getLogPageViewCss)).click();
+    }
+
+
 
 }
 
