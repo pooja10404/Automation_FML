@@ -42,15 +42,17 @@ public class JoyBirdPage extends SeleniumUtility{
     }
 
     public void ClickOnMessageIframeBox() {
+        driver.findElement(By.cssSelector(clickonSustainability)).click();
+//        waitForElementVisibility(clickonCloseButton,40);
+//        driver.findElement(By.cssSelector(clickonCloseButton)).click();
         scrollTillEndOfPage();
-        waitForElementVisibility(getMessageIframeBoxText,100);
-        WebElement iframe_element=driver.findElement(By.cssSelector("iframe[class='hero-launcher-avatar']"));
-        clickOnElementSide(iframe_element,"default");
-    }
+        waitForElementVisibility(clickonSustainability,60);
+        WebElement iframe_element=driver.findElement(By.cssSelector(messageIframe));
+        driver.switchTo().frame(iframe_element);
+        commonpage.rightClickOnFindMyLocator(getMessageIframeBoxText);
+        driver.switchTo().defaultContent();
 
-    public void ClickOnLogPageView() {
-        scrollTillEndOfPage();
-        driver.findElement(By.cssSelector(getLogPageViewCss)).click();
+
     }
 
 }
