@@ -103,6 +103,27 @@ public class DemoQATest extends BaseTest {
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
 
+    @Test
+    public void demoQA10(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_10");
+        commonPage.launchUrl();
+        demoQAPage.clickOnFemaleRadioButton();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+    }
+
+    @Test
+    public void demoQA11(){
+        Map<String, String> values = commonPage.readExcel("Demo_QA_11");
+        commonPage.launchUrl();
+        demoQAPage.clickOnReadingCheckbox();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+
+
 
 
 

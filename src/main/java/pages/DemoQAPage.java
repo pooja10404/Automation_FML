@@ -16,10 +16,10 @@ public class DemoQAPage extends SeleniumUtility{
     public String samplePageHeadingTextcss = "h1[id='sampleHeading']";
 
     public String samplePageFramecss = "div[id='frame1Wrapper']";
-
     public String samplePageFrameOne = "frame1";
-
     public String samplePageFrameTwo = "frame2";
+    public String femaleRadioButtonCss = "label[for='gender-radio-2']";
+    public String getReadingCheckboxCss = "label[for='hobbies-checkbox-2']";
 
     public void clickOnTextBox(){
         commonPage.rightClickOnFindMyLocator(getTextBoxCss);
@@ -62,5 +62,14 @@ public class DemoQAPage extends SeleniumUtility{
     public void clickOnParentFramePage()  {
         scrollTillEndOfPage();
         driver.findElement(By.cssSelector(samplePageFramecss)).click();
+    }
+
+    public void clickOnFemaleRadioButton()  {
+        driver.findElement(By.cssSelector(femaleRadioButtonCss)).click();
+    }
+
+    public void clickOnReadingCheckbox()  {
+        scrollingToElementofAPage(getReadingCheckboxCss);
+        commonPage.rightClickOnFindMyLocator(getReadingCheckboxCss);
     }
 }

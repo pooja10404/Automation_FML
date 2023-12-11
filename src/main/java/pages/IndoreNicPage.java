@@ -17,6 +17,9 @@ public class IndoreNicPage extends SeleniumUtility{
     public String getStdAndPinCodeTextCss="h1";
     public String getPostOfficeTextCss="div[id*='post-'] > p:nth-of-type(2)";
     public String getPinCodeBoxTextCss="table[class*='table']:nth-of-type(2) th[scope='col']:nth-of-type(1)";
+    public String getAdministrationSetupCss="li[aria-haspopup='true'] > ul[aria-hidden='false']>li[aria-haspopup='true']:nth-of-type(4)>a";
+    public String getCollectrateCss="li[aria-haspopup='true']:nth-of-type(4) > ul[class='sub-menu show-menu']>li[id*='menu-item-']:nth-of-type(1)>a";
+
 
 
     public void clickOnAboutDistrictDropdown(){
@@ -62,6 +65,12 @@ public class IndoreNicPage extends SeleniumUtility{
 
     public void clickPinCodeBoxText() {
         driver.findElement(By.cssSelector(getPinCodeBoxTextCss)).click();
+    }
+
+    public void clickCollectrateText() {
+        moveToElement(getAboutDistrictDropdownLocatorscss);
+        moveToElement(getAdministrationSetupCss);
+        commonPage.rightClickOnFindMyLocator(getCollectrateCss);
     }
 
 }

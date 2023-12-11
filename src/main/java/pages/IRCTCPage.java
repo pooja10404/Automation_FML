@@ -38,7 +38,12 @@ public class IRCTCPage extends SeleniumUtility{
     public String irctcMovetoElement="div[class*='col-lg-']:nth-of-type(2) button[class='btn_Tab']:nth-of-type(5)";
     public String getDishaLocatorCss = "div[id='askDishaLuncher'] > img:nth-of-type(1)";
     public String crossOriginLocator="div[id='book-form']";
+    public String HolidayMenuCss = "a[aria-label='Menu Holiday']";
     public String dishaIframeId = "Disha-Bot";
+    public String HolidaySubMenuCss="a[aria-label='Sub Menu of Holiday, Tourist Trains. Having sub menu'] > span[class='list_text']";
+    public String HolidaySubMenuGauravMenuCss="li[class='menu-list header-icon-menu']:nth-of-type(7) li:nth-of-type(1)>ul[class='child-drop']>li:nth-of-type(1)";
+    public String getLadiesOptionCss="li[aria-label='LADIES']";
+
     public void clickOnFromTextBox() {
         driver.findElement(By.xpath(getFromTextBoxLocatorsXpath)).click();
     }
@@ -122,6 +127,23 @@ public class IRCTCPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(crossOriginLocator)).click();
         driver.switchTo().defaultContent();
     }
+
+    public void clickOnHolidayMenu() {
+        driver.findElement(By.cssSelector(HolidayMenuCss)).click();
+    }
+    public void clickOnHolidaySubMenuGauravMenu(){
+        moveToElement(HolidayMenuCss);
+        moveToElement(HolidaySubMenuCss);
+        driver.findElement(By.cssSelector(HolidaySubMenuGauravMenuCss)).click();
+    }
+
+    public void clickOnLadiesOption(){
+        driver.findElement(By.cssSelector(getGeneralDropdownLocatorCss)).click();
+        moveToElement(getLadiesOptionCss);
+        commonPage.rightClickOnFindMyLocator(getLadiesOptionCss);
+
+    }
+
     public void irctcWalletLink(){
         waitForElementVisibility(irctcMovetoElement,80);
         commonPage.rightClickOnFindMyLocator(getIrctcWalletLocatorCss);

@@ -14,9 +14,12 @@ public class JoyBirdPage extends SeleniumUtility{
     public String ByClickOnTheShowRoom="ul[class*='flex-row']:nth-of-type(1)>li[class*='items-center']:nth-of-type(2) span";
 
     public String  ByClickOnFreeDesignText="button[class*='group']:nth-of-type(5)";
-    public String getMessageIframeBoxText="div[class='sc-hJxCPi bIScfh']";
+    public String getMessageIframeBoxText="iframe[class='hero-launcher-avatar']";
     public String clickonSustainability="div[class*='flex'] > div[class*='w-']:nth-of-type(1) > ul>li:nth-of-type(5)>a";
+
     public String messageIframe="iframe[data-qa='launcher-icon-iframe']";
+
+    public String getLogPageViewCss="iframe[id='avo-debugger']";
 
     public void ClickOnTheSearchIcon() {
         driver.findElement(By.cssSelector(ClickOnTheSearchIcon)).click();
@@ -30,6 +33,7 @@ public class JoyBirdPage extends SeleniumUtility{
     }
     public void ByClickOnTheShowRoom() {
         commonpage.rightClickOnFindMyLocator(ByClickOnTheShowRoom);
+
     }
 
     public void ByClickOnFreeDesignText() {
@@ -48,8 +52,14 @@ public class JoyBirdPage extends SeleniumUtility{
         commonpage.rightClickOnFindMyLocator(getMessageIframeBoxText);
         driver.switchTo().defaultContent();
 
-
     }
+
+    public void ClickOnLogPageView() {
+        scrollTillEndOfPage();
+        driver.findElement(By.cssSelector(getLogPageViewCss)).click();
+    }
+
+
 
 }
 
