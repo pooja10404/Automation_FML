@@ -14,10 +14,12 @@ public class JoyBirdPage extends SeleniumUtility{
     public String ByClickOnTheShowRoom="ul[class*='flex-row']:nth-of-type(1)>li[class*='items-center']:nth-of-type(2) span";
 
     public String  ByClickOnFreeDesignText="button[class*='group']:nth-of-type(5)";
-    public String getMessageIframeBoxText="div[class='sc-hJxCPi bIScfh']";
+    public String getMessageIframeBoxText="iframe[class='hero-launcher-avatar']";
     public String clickonSustainability="div[class*='flex'] > div[class*='w-']:nth-of-type(1) > ul>li:nth-of-type(5)>a";
-    public String clickonCloseButton="div[class='sidebar-iframe-close']";
+
     public String messageIframe="iframe[data-qa='launcher-icon-iframe']";
+
+    public String getLogPageViewCss="iframe[id='avo-debugger']";
 
     public void ClickOnTheSearchIcon() {
         driver.findElement(By.cssSelector(ClickOnTheSearchIcon)).click();
@@ -40,17 +42,15 @@ public class JoyBirdPage extends SeleniumUtility{
     }
 
     public void ClickOnMessageIframeBox() {
-        driver.findElement(By.cssSelector(clickonSustainability)).click();
-//        waitForElementVisibility(clickonCloseButton,40);
-//        driver.findElement(By.cssSelector(clickonCloseButton)).click();
         scrollTillEndOfPage();
-        waitForElementVisibility(clickonSustainability,60);
-        WebElement iframe_element=driver.findElement(By.cssSelector(messageIframe));
-        driver.switchTo().frame(iframe_element);
-        commonpage.rightClickOnFindMyLocator(getMessageIframeBoxText);
-        driver.switchTo().defaultContent();
+        waitForElementVisibility(getMessageIframeBoxText,100);
+        WebElement iframe_element=driver.findElement(By.cssSelector("iframe[class='hero-launcher-avatar']"));
+        clickOnElementSide(iframe_element,"default");
+    }
 
-
+    public void ClickOnLogPageView() {
+        scrollTillEndOfPage();
+        driver.findElement(By.cssSelector(getLogPageViewCss)).click();
     }
 
 }

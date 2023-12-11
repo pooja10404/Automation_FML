@@ -617,9 +617,7 @@ public class SeleniumUtility {
     public void scrollTillEndOfPage() {
         LOGGER.info("Scrolling till end of the page");
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {}
+        sleep(2);
     }
 
     /**
@@ -988,7 +986,7 @@ public class SeleniumUtility {
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
-        sleep(5000);
+        sleep(2);
 
     }
 

@@ -252,4 +252,31 @@ public class IrctcTest extends BaseTest {
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
         commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
     }
+
+    @Test
+    public void irctcTest25(){
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_25");
+        commonPage.launchUrl();
+        irctcPage.clickOnHolidayMenu();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+    @Test
+    public void irctcTest27(){
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_27");
+        commonPage.launchUrl();
+        irctcPage.clickOnHolidaySubMenuGauravMenu();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+    @Test
+    public void irctcTest28(){
+        Map<String, String> values = commonPage.readExcel("IRCTC_TC_28");
+        commonPage.launchUrl();
+        irctcPage.clickOnLadiesOption();
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
 }
