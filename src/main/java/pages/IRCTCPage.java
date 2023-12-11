@@ -141,7 +141,6 @@ public class IRCTCPage extends SeleniumUtility{
         driver.findElement(By.cssSelector(getGeneralDropdownLocatorCss)).click();
         moveToElement(getLadiesOptionCss);
         commonPage.rightClickOnFindMyLocator(getLadiesOptionCss);
-      //  driver.findElement(By.cssSelector(getLadiesOptionCss)).click();
 
     }
 

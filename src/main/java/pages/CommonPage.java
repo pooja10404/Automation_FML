@@ -101,7 +101,6 @@ public class CommonPage extends SeleniumUtility {
             Thread.sleep(3000);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_F);
-            Thread.sleep(2000);
 
         } catch (AWTException e) {
             throw new RuntimeException(e);

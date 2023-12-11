@@ -596,9 +596,7 @@ public class SeleniumUtility {
         WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
         //highlightWebElement(element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {}
+        sleep(1);
 
         return element;
     }
