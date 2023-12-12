@@ -596,9 +596,7 @@ public class SeleniumUtility {
         WebElement element = driver.findElement(By.cssSelector(String.valueOf(ele)));
         //highlightWebElement(element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {}
+        sleep(1);
 
         return element;
     }
@@ -617,9 +615,7 @@ public class SeleniumUtility {
     public void scrollTillEndOfPage() {
         LOGGER.info("Scrolling till end of the page");
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {}
+        sleep(2);
     }
 
     /**
@@ -988,7 +984,7 @@ public class SeleniumUtility {
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
-        sleep(5000);
+        sleep(2);
 
     }
 
