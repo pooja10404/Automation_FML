@@ -10,7 +10,6 @@ import java.util.Map;
 public class indiaPostTest extends BaseTest {
     indiaPostPage indiapostPage=new indiaPostPage();
 
-
     @Test(priority=1)
     public void indiapost_TC_01() {
         CommonPage commonPage = new CommonPage();
@@ -78,7 +77,7 @@ public class indiaPostTest extends BaseTest {
         CommonPage commonPage = new CommonPage();
         Map<String, String> values = commonPage.readExcel("indiapost_TC_07");
         commonPage.launchUrl();
-        indiapostPage.clickOnTheTrackNowButton();
+        indiapostPage.clickOnThecaptch();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
@@ -110,6 +109,95 @@ public class indiaPostTest extends BaseTest {
         Map<String, String> values = commonPage.readExcel("indiapost_TC_10");
         commonPage.launchUrl();
         indiapostPage.ClickOnTelephoneImg();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+    @Test(priority=11)
+    public void indiapost_TC_11() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_11");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheMenuButton();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+
+    @Test(priority=12)
+    public void indiapost_TC_12() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_12");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheAboutUsButton();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+        commonPage.assertionForWithoutIndexLocator(values.get("WithoutIndexCSS"),values.get("WithoutIndexXpath"));
+        commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
+    }
+    @Test(priority=13)
+    public void indiapost_TC_13() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_13");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheImageMoc();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test(priority=14)
+    public void indiapost_TC_14() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_14");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheTextInsideNewsUpdate();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+    @Test(priority=15)
+    public void indiapost_TC_15() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_15");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheFaceBookLogo();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test(priority=16)
+    public void indiapost_TC_16() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_16");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnCheckedRadioButton();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+    @Test(priority=17)
+    public void indiapost_TC_17() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_17");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnPinCodeInputFiled();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test(priority=18)
+    public void indiapost_TC_18() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_18");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheGetAvailabelButton();
+        // Asserstion
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
+    }
+
+    @Test(priority=19)
+    public void indiapost_TC_19() {
+        CommonPage commonPage = new CommonPage();
+        Map<String, String> values = commonPage.readExcel("indiapost_TC_19");
+        commonPage.launchUrl();
+        indiapostPage.ClickOnTheTCSLink();
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
     }
