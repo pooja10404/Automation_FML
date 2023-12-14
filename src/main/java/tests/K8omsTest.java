@@ -1,9 +1,8 @@
 package tests;
+
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.CommonPage;
-import pages.DeveloperMozillaPage;
-import pages.FreeJobAlertPage;
 import pages.K8omsPage;
 
 import java.util.Map;
@@ -15,11 +14,11 @@ public class K8omsTest extends BaseTest {
     CommonPage commonPage = new CommonPage();
 
     @Test
-    public void k8oms01(){
+    public void k8oms01() {
         Map<String, String> values = commonPage.readExcel("k8oms_Iframe_01");
         commonPage.launchUrl();
         k8omsPage.clickOnK8mosIframe();
-        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"),values.get("UniqueLocatorXpath"));
-        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"),values.get("IframeLocatorXpath"));
+        commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"), values.get("UniqueLocatorXpath"));
+        commonPage.assertionForIframeLocator(values.get("IframeLocatorCSS"), values.get("IframeLocatorXpath"));
     }
 }
