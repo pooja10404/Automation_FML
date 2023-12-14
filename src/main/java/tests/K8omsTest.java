@@ -3,8 +3,6 @@ package tests;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.CommonPage;
-import pages.DeveloperMozillaPage;
-import pages.FreeJobAlertPage;
 import pages.K8omsPage;
 
 import java.util.Map;

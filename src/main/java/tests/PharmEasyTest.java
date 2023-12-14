@@ -2,8 +2,6 @@ package tests;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.CommonPage;
-import pages.FreshersJobPage;
-import pages.MedlinePages;
 import pages.PharmEasyPage;
 
 import java.util.Map;

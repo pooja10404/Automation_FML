@@ -26,4 +26,9 @@
             <class name="tests.jeevanPramaanTest"/>
         </classes>
     </test>
+    <test name = "indiaPostTest">
+        <classes>
+            <class name="tests.indiaPostTest"/>
+        </classes>
+    </test>
 </suite>

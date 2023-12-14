@@ -4,8 +4,6 @@ import base.BaseTest;
 import org.testng.annotations.*;
 import pages.CommonPage;
 import pages.jeevanPramaanPage;
-
-import java.time.Duration;
 import java.util.Map;
 
 
