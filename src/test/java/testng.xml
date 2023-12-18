@@ -15,7 +15,7 @@
         <classes>
             <class name="tests.AbhiVyaktitest"/>
         </classes>
-    </test>f
+    </test>
     <test name = "EpfotestCase">
         <classes>
             <class name="tests.EpfoTest"/>
