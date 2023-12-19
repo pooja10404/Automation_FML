@@ -93,4 +93,5 @@ public class orangeHrmDemoTest extends BaseTest {
         // Asserstion
         commonPage.assertionForUniqueLocator(values.get("UniqueLocatorCSS"), values.get("UniqueLocatorXpath"));
     }
+
 }

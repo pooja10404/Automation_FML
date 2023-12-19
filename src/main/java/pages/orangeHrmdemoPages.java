@@ -14,8 +14,6 @@ public class orangeHrmdemoPages extends SeleniumUtility{
     public String clickOnDashboard =" h6[class*='oxd-text']";
     public String clickOnProfile ="img[class='oxd-userdropdown-img']";
     public String clickOnTheHlep ="i[class='oxd-icon bi-question-lg']";
-    public String clickOnTheAdmin ="li[class='oxd-main-menu-item-wrapper']:nth-of-type(1) span[class='oxd-text oxd-text--span oxd-main-menu-item--name']";
-    public String clickOnPunchTime="div[class='orangehrm-todo-list-item']:nth-of-type(1) > p[class='oxd-text oxd-text--p']";
 
 
     public void ClickOnOrangeHrmLogo() {
@@ -51,4 +49,5 @@ public class orangeHrmdemoPages extends SeleniumUtility{
     public void ClickOnTheHelpPopUp() {
         commonpage.rightClickOnFindMyLocator(clickOnTheHlep);
     }
+
 }
