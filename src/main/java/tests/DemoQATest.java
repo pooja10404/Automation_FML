@@ -15,7 +15,7 @@ public class DemoQATest extends BaseTest {
     CommonPage commonPage = new CommonPage();
 
     @Test
-    public void demoQA1(){
+    public void Demo_QA_01(){
         Map<String, String> values = commonPage.readExcel("Demo_QA_01");
         commonPage.launchUrl();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
@@ -26,7 +26,7 @@ public class DemoQATest extends BaseTest {
     }
 
     @Test
-    public void demoQA2(){
+    public void Demo_QA_02(){
         Map<String, String> values = commonPage.readExcel("Demo_QA_02");
         commonPage.launchUrl();
         demoQAPage.clickOnAlertFrameWindowText();
@@ -36,7 +36,7 @@ public class DemoQATest extends BaseTest {
     }
 
     @Test
-    public void demoQA3() {
+    public void Demo_QA_03() {
         Map<String, String> values = commonPage.readExcel("Demo_QA_03");
         commonPage.launchUrl();
         demoQAPage.clickOnDoYouLikeText();
@@ -44,7 +44,7 @@ public class DemoQATest extends BaseTest {
         commonPage.assertionForTextLocator(values.get("TextLocatorCSS"),values.get("TextLocatorXpath"));
     }
     @Test
-    public void demoQA4(){
+    public void Demo_QA_04(){
         Map<String, String> values = commonPage.readExcel("Demo_QA_04");
         commonPage.launchUrl();
         demoQAPage.clickOnMultiSelectDropdown();
