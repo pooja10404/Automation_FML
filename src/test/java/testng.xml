@@ -1,34 +1,99 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "Suite1">
-    <test name = "JoyBirdTestCase">
-        <classes>
-            <class name="tests.JoyBirdTest"/>
-        </classes>
-    </test>
-    <test name = "IRCTCTestCase">
-        <classes>
-            <class name="tests.IrctcTest"/>
-        </classes>
-    </test>
-    <test name = "AbhiVyaktiestCase">
+    <test name = "AbhiVyaktitest">
         <classes>
             <class name="tests.AbhiVyaktitest"/>
         </classes>
     </test>
-    <test name = "EpfotestCase">
+    <test name = "tests.bewakoofTest">
+        <classes>
+            <class name="tests.bewakoofTest"/>f
+        </classes>
+    </test>
+    <test name = "DemoQaPage">
+        <classes>
+            <class name="tests.DemoQATest"/>
+        </classes>
+    </test>
+    <test name = "DeveloperMozillaPage">
+        <classes>
+            <class name="tests.DeveloperMozillaTest"/>
+        </classes>
+    </test>
+    <test name = "EpfoPage">
         <classes>
             <class name="tests.EpfoTest"/>
         </classes>
     </test>
-    <test name = "jeevanPramaantestCase">
+    <test name = "FreeJobAlertPage">
+        <classes>
+            <class name="tests.FreeJobAlertTest"/>
+        </classes>
+    </test>
+    <test name = "FreshersJobPage">
+        <classes>
+            <class name="tests.FreshersJobTest"/>
+        </classes>
+    </test>
+    <test name = "indiaPostPage">
+        <classes>
+            <class name="tests.indiaPostTest"/>
+        </classes>
+    </test>
+    <test name = "IndoreNicPage">
+        <classes>
+            <class name="tests.IndoreNicTest"/>
+        </classes>
+    </test>
+    <test name = "IRCTCPage">
+        <classes>
+            <class name="tests.IrctcTest"/>
+        </classes>
+    </test>
+    <test name = "JeevanPramaanPage">
         <classes>
             <class name="tests.jeevanPramaanTest"/>
         </classes>
     </test>
-    <test name = "indiaPostTest">
+    <test name = "JoyBirdPage">
         <classes>
-            <class name="tests.indiaPostTest"/>
+            <class name="tests.JoyBirdTest"/>
+        </classes>
+    </test>
+    <test name = "K8omsPage">
+        <classes>
+            <class name="tests.K8omsTest"/>
+        </classes>
+    </test>
+    <test name = "MedLinePages">
+        <classes>
+            <class name="tests.JoyBirdTest"/>
+        </classes>
+    </test>
+    <test name = "OrangeHrmdemoPages">
+        <classes>
+            <class name="tests.orangeHrmDemoTest"/>
+        </classes>
+    </test>
+    <test name = "PharmEasyPage">
+        <classes>
+            <class name="tests.PharmEasyTest"/>
+        </classes>
+    </test>
+    <test name = "ToscaPages">
+        <classes>
+            <class name="tests.Toscatest"/>
+        </classes>
+    </test>
+    <test name = "UitRgpvPage">
+        <classes>
+            <class name="tests.UitRgpvTest"/>
+        </classes>
+    </test>
+    <test name = "YonoBnakPage">
+        <classes>
+            <class name="tests.YonoBankTest"/>
         </classes>
     </test>
 </suite>
